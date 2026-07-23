@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>이미정 의원 의정지원 계획</title>
+<title>황은화 의원 의정지원 계획</title>
 <style>
 :root{--pri:#1B3A5C;--sec:#2E75B6;--acc:#4472C4;--lbg:#E8EFF7;--lbg2:#F2F7FC;--dk:#1A1A1A;--gr:#666;--wh:#fff;--bd:#D0D8E0;--green:#0F6E56;--green-bg:#E1F5EE;--amber:#854F0B;--amber-bg:#FAEEDA;--red:#A32D2D;--red-bg:#FCEBEB;--purple:#534AB7;--purple-bg:#EEEDFE}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -22,7 +22,7 @@ body{font-family:'Malgun Gothic','맑은 고딕','Segoe UI',sans-serif;backgroun
 .reset-btn:hover{background:rgba(255,255,255,.25)}
 body.edit-mode .reset-btn{display:inline-block}
 .header{background:var(--wh);border-bottom:1px solid var(--bd);padding:20px 32px;display:flex;align-items:center;gap:16px}
-.avatar{width:52px;height:52px;border-radius:50%;background:var(--acc);color:var(--wh);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:600;flex-shrink:0;overflow:hidden}
+.avatar{width:52px;height:52px;border-radius:50%;background:var(--sec);color:var(--wh);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:600;flex-shrink:0;overflow:hidden}
 .avatar img{width:100%;height:100%;object-fit:cover}
 .header-info h2{font-size:20px;font-weight:600;color:var(--pri)}
 .header-info p{font-size:13px;color:var(--gr);margin-top:2px}
@@ -31,7 +31,8 @@ body.edit-mode .reset-btn{display:inline-block}
 .tab:hover{color:var(--sec)}
 .tab.active{color:var(--sec);border-bottom-color:var(--sec)}
 .content{max-width:960px;margin:0 auto;padding:24px 32px}
-.panel{display:none}.panel.active{display:block}
+.panel{display:none}
+.panel.active{display:block}
 .metric-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
 .metric{background:var(--wh);border-radius:10px;padding:16px 20px;border:1px solid var(--bd)}
 .metric-label{font-size:12px;color:var(--gr);margin-bottom:4px}
@@ -66,6 +67,8 @@ ul.bl li::before{content:'●';position:absolute;left:0;color:var(--acc);font-si
 .next-alert{background:linear-gradient(135deg,var(--lbg),var(--lbg2));border:1px solid var(--acc);border-radius:10px;padding:14px 20px;margin-bottom:20px;display:flex;align-items:center;gap:12px}
 .next-alert .text{font-size:13px;color:var(--pri)}
 .next-alert .text strong{color:var(--sec)}
+
+/* Edit mode */
 .grip{display:none;color:var(--gr);cursor:grab;font-size:18px;padding:0 4px;flex-shrink:0;user-select:none}
 .grip:active{cursor:grabbing}
 body.edit-mode .grip{display:inline-block}
@@ -75,15 +78,21 @@ body.edit-mode .del-btn{display:block}
 .add-btn{display:none;border:2px dashed var(--acc);background:transparent;color:var(--acc);padding:12px;border-radius:10px;width:100%;cursor:pointer;font-size:14px;font-weight:600;margin:8px 0 16px;transition:all .2s}
 .add-btn:hover{background:var(--lbg);border-color:var(--sec)}
 body.edit-mode .add-btn{display:block}
+body.edit-mode .card{cursor:default}
 body.edit-mode .card.dragging{opacity:.4;border:2px dashed var(--acc)}
 body.edit-mode .card.drag-over{border-top:3px solid var(--sec)}
 [contenteditable=true]{outline:none;border-bottom:1px dashed var(--acc);padding:0 2px;min-width:20px}
 [contenteditable=true]:focus{background:var(--lbg2);border-bottom-color:var(--sec)}
+
+/* Sched table edit */
 body.edit-mode .tbl td[contenteditable]{border-bottom:1px dashed var(--acc)}
-body.edit-mode .tbl .grip-cell{display:table-cell}
+.tbl .add-row-btn{display:none;background:transparent;border:2px dashed var(--acc);color:var(--acc);padding:8px;width:100%;cursor:pointer;font-size:13px;font-weight:600}
+body.edit-mode .tbl .add-row-btn{display:block}
+.tbl .del-cell{display:none;color:var(--red);cursor:pointer;font-size:14px;text-align:center}
 body.edit-mode .tbl .del-cell{display:table-cell}
 .tbl .grip-cell{display:none;cursor:grab;color:var(--gr);font-size:14px;text-align:center}
-.tbl .del-cell{display:none;color:var(--red);cursor:pointer;font-size:14px;text-align:center}
+body.edit-mode .tbl .grip-cell{display:table-cell}
+
 /* Calendar */
 .cal-wrap{margin-bottom:24px}
 .cal-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:12px}
@@ -131,10 +140,10 @@ body.edit-mode .tbl .del-cell{display:table-cell}
 </div>
 
 <div class="header">
-  <div class="avatar"><img src="photo.jpg" alt="이미정" onerror="this.remove();this.parentNode.textContent='이'"></div>
+  <div class="avatar"><img src="photo.jpg" alt="황은화" onerror="this.remove();this.parentNode.textContent='황'"></div>
   <div class="header-info">
-    <h2>이미정 의원</h2>
-    <p>더불어민주당 · 비례대표 · 문화체육관광위원회</p>
+    <h2>황은화 의원</h2>
+    <p>더불어민주당 · 안산시 제7선거구 (선감·대부·선부동) · 문화체육관광위원회</p>
   </div>
 </div>
 
@@ -155,62 +164,63 @@ body.edit-mode .tbl .del-cell{display:table-cell}
 </div>
 
 <script>
-const STORAGE='lee_v2';
+const STORAGE='hwang_v2';
 const statusCycle=['예정','진행중','완료'];
 const statusClass=['badge-plan','badge-prog','badge-done'];
 const catLabels={bill:'조례 제정',amend:'조례 개정',speech:'5분발언',query:'대집행부질의',audit:'행정사무감사',budget:'예산심의',etc:'기타'};
 let editMode=false;
 
+/* ===== DEFAULT DATA ===== */
 const DEFAULT={
 activities:[
-  {id:'a1',year:1,cat:'bill',title:'경기도 중장년 문화예술 활동 지원 조례',date:'2026.11월 제394회 정례회',status:0,body:'50+ 중장년 대상 문화예술 참여·창작·교육 지원 체계, 중장년 전용 문화 프로그램, 세대 간 문화 교류, 경기문화재단·시군 협력\n연계: 경기도민 평생학습(55.8억), 아카데미 운영(5.5억), 문화일자리(23.3억)',details:'중장년 문화예술 참여 현황 및 수요 조사|타 시도 중장년 문화 관련 조례 비교분석|중장년 문화단체·전문가 간담회 (10월)|경기문화재단·경기도 평생교육진흥원 협의 (10월)|입법조사처 조례안 검토 의뢰 (10월 중순)'},
-  {id:'a2',year:1,cat:'amend',title:'평생교육진흥 조례 일부개정',date:'2027.2월',status:0,body:'AI·디지털 전환 대응 직업 역량교육 프로그램 지원 근거|중장년 직업전환 교육 특화 과정 개설 지원|온라인·혼합형 평생학습 운영 방식 다양화'},
-  {id:'a3',year:1,cat:'amend',title:'문화예술진흥 조례 일부개정',date:'2027.4월',status:0,body:'문화일자리 사업에 중장년·경력단절여성 우선 참여 근거|문화예술 분야 사회적 경제 조직 지원 조항|예술인 복지·권익보호 관련 조항 강화'},
-  {id:'a4',year:1,cat:'speech',title:'「중장년 문화일자리, 경기도가 선도해야 합니다」',date:'2026.9월 제393회',status:0,body:'중장년층 문화예술 활동 현황 및 정책 사각지대|문화일자리 사업(23.3억) 중장년 참여 확대 필요성|중장년 문화예술 조례 추진 배경 소개'},
-  {id:'a5',year:1,cat:'speech',title:'「AI 시대, 경기도 평생학습이 달라져야 합니다」',date:'2027.2월',status:0,body:'AI·디지털 전환에 따른 직업 역량 교육 필요성|경기도 평생교육진흥원 온라인 학습 인프라 현황|경력단절여성 재취업과 문화산업 연계 방안'},
-  {id:'a6',year:1,cat:'query',title:'「경기도 문화정책의 중장년·취약계층 포용성 강화 방안」',date:'2026.11월 제394회',status:0,body:'문화일자리 사업(23.3억) 연령별 참여 현황과 중장년 배분|경기도민 평생학습(55.8억) 문화예술 분야 비중|통합문화이용권(778억) 사각지대 해소 방안|경기문화재단 중장년 대상 프로그램 현황|데이터 기반 문화정책 수립 현황'},
-  {id:'a7',year:1,cat:'audit',title:'문체위 소관 기관 감사',date:'2026.11.6.~11.19.',status:0,body:'경기문화재단: 중장년·취약계층 문화향유, 문화공간 재생사업|경기도 평생교육진흥원: 평생학습 55.8억 집행, AI 교육|경기콘텐츠진흥원: 콘텐츠 인력양성, 1인 미디어 육성|경기관광공사: 관광 일자리 창출|경기아트센터: 예술인 복지·일자리|경기도체육회: 생활체육 지도사 중장년 채용'},
-  {id:'a8',year:1,cat:'budget',title:'2027년도 예산심의',date:'2026.12월 제394회',status:0,body:'중장년 문화예술 활동 지원 신규 예산|AI 직업전환 평생학습 프로그램 증액|경력단절여성 문화일자리 특화 프로그램|데이터 기반 문화정책 수립 예산|2027 전국체전(461억) 운영 예산 점검'},
-  {id:'a9',year:2,cat:'bill',title:'경기도 데이터 기반 문화정책 수립 지원 조례',date:'2027.11월 정례회',status:0,body:'문화예술 데이터 수집·분석 체계, 도민 문화향유 실태조사 정례화, 데이터 기반 문화정책 수립 의무화, 문화영향평가 근거'},
-  {id:'a10',year:2,cat:'amend',title:'경력단절여성 지원 관련 조례 일부개정',date:'2027.9월',status:0,body:'문화예술·콘텐츠 분야 경력단절여성 재취업 지원 특화 조항'},
-  {id:'a11',year:2,cat:'amend',title:'중장년 문화예술 조례 시행 보완 개정',date:'2028.2월',status:0,body:'1차년도 조례 시행 후 현장 의견 반영 보완'},
-  {id:'a12',year:2,cat:'speech',title:'「전국체전, 경기도민의 스포츠 문화를 바꿀 기회입니다」',date:'2027.9월',status:0,body:'전국체전 레거시, 생활체육 인프라 활용|중장년 체육 참여 확대'},
-  {id:'a13',year:2,cat:'speech',title:'「데이터로 보는 경기도 문화정책, 성과와 과제」',date:'2028.2월',status:0,body:'데이터 기반 조례 1년 성과|전반기 의정활동 총정리'},
-  {id:'a14',year:2,cat:'query',title:'「2027 전국체전 이후 경기도 체육·문화 인프라의 지속가능 활용 방안」',date:'2027.11월 정례회',status:0,body:'전국체전 경기장 74개소 사후 활용 계획|중장년 문화예술 조례 시행 성과|AI 직업전환 교육 프로그램 운영 현황|경력단절여성 문화일자리 참여 성과'},
-  {id:'a15',year:2,cat:'audit',title:'2027년 행정사무감사',date:'2027.11월',status:0,body:'전국체전 집행 감사|중장년 문화 조례 시행 성과|평생학습 AI 교육 실적|경력단절여성 지원'},
-  {id:'a16',year:2,cat:'budget',title:'2028년도 예산심의',date:'2027.12월',status:0,body:'데이터 기반 문화정책 운영 예산|중장년 문화예술 2차년도 예산|경력단절여성 문화일자리|전국체전 후속 사업'},
+  {id:'a1',year:1,cat:'bill',title:'다문화 관광자원 육성 및 지원 조례',date:'2026.11월 제394회 정례회',status:0,body:'다문화 특화 관광자원 발굴·육성, 관광특구 지정 근거, 다국어 관광 안내 인프라, 경기관광공사·시군 협력체계\n연계: 경기 로컬관광(21억), 대표 지역축제(35억), 경기컬처패스(25억)',details:'안산 다문화마을특구 현황 및 관광자원 실태조사|타 시도 다문화 관광 관련 조례 비교분석|안산 다문화 주민·단체 간담회 개최 (10월)|경기관광공사·안산시 협의 (10월)|입법조사처 조례안 검토 의뢰 (10월 중순)'},
+  {id:'a2',year:1,cat:'amend',title:'관광진흥 조례 일부개정',date:'2027.2월',status:0,body:'관광특구 지정 요건에 다문화 특화 관광지구 유형 추가|다국어 관광 안내 시스템 구축 근거 강화|로컬관광 콘텐츠에 다문화 체험형 관광상품 포함'},
+  {id:'a3',year:1,cat:'amend',title:'지역축제 조례 일부개정',date:'2027.4월',status:0,body:'다문화축제 경기대표관광축제 지정 심사 시 가점 부여|축제 기획·운영에 다문화 주민 참여 의무화|축제 경제효과 측정 시 다문화 커뮤니티 기여도 반영'},
+  {id:'a4',year:1,cat:'speech',title:'「안산 다문화마을, 경기도 국제관광의 새로운 자산입니다」',date:'2026.9월 제393회',status:0,body:'안산 다문화특구의 관광 잠재력 및 현재 한계 분석|경기도 방한외래객 방문율 11.2% 성과와 다문화 관광 연계|다문화 관광자원 조례 추진 배경 및 필요성'},
+  {id:'a5',year:1,cat:'speech',title:'「대부도·시화호, 경기 해양관광의 미래를 열다」',date:'2027.2월',status:0,body:'대부도·시화호 관광특구 지정 필요성|웰니스 관광지 인증 및 워케이션 확대 제안|무장애 관광지 개선을 통한 포용적 관광 실현'},
+  {id:'a6',year:1,cat:'query',title:'「경기도 관광산업의 다문화 자원 활용 현황과 안산 관광특구 지정 추진 방안」',date:'2026.11월 제394회',status:0,body:'경기도 외래관광객 유치 전략 중 다문화 관광자원 활용 현황|로컬관광 지원(21억)에 안산 다문화 콘텐츠 포함 여부|대부도·시화호 관광특구 지정 추진 가능성 및 절차|웰니스 관광지 20개소 인증 중 안산 권역 확대 계획|마이스 산업 안산 국제회의 유치 연계 가능성'},
+  {id:'a7',year:1,cat:'audit',title:'문체위 소관 기관 감사',date:'2026.11.6.~11.19.',status:0,body:'경기관광공사: 로컬관광 콘텐츠 6건, 외래관광객 유치 성과|경기문화재단: 문화공간 재생사업 안산 운영 실태|경기콘텐츠진흥원: DMZ국제다큐멘터리영화제(40억), 다양성영화|경기아트센터: 안산 국제거리극축제 지원 성과|경기도체육회: 공공체육시설 안산 지역 현황|한국도자재단: 경영 효율성 및 관광 연계'},
+  {id:'a8',year:1,cat:'budget',title:'2027년도 예산심의',date:'2026.12월 제394회',status:0,body:'안산 다문화 관광콘텐츠 개발 신규 예산 확보|대부도·시화호 관광자원 개발사업 예산|무장애 관광지 공간환경 개선 안산 포함|2027 전국체전 안산 경기장 개보수 예산 점검|안산 국제거리극축제 지원 증액'},
+  {id:'a9',year:2,cat:'bill',title:'해양관광 진흥 및 지원 조례',date:'2027.11월 정례회',status:0,body:'대부도·시화호 해양관광 체계적 개발, 해양레저·생태관광 프로그램, 갯길 활성화, 해양관광 인력양성\n연계: 경기둘레길 조성·운영(9억), 관광자원 개발(50개 세부사업), 웰니스 관광(4억)'},
+  {id:'a10',year:2,cat:'amend',title:'문화예술교육 조례 일부개정',date:'2027.9월',status:0,body:'다문화 아동·청소년 대상 문화예술교육 특화|다문화 예술인 교육 참여 확대'},
+  {id:'a11',year:2,cat:'amend',title:'다문화 관광자원 조례 시행 보완 개정',date:'2028.2월',status:0,body:'1차년도 조례 시행 후 현장 의견 반영|관광 품질인증 제도 도입'},
+  {id:'a12',year:2,cat:'speech',title:'「전국체전이 남긴 것, 안산 체육 인프라의 미래」',date:'2027.9월',status:0,body:'전국체전 안산 경기장 활용 성과|장애인체육·다문화 스포츠 확대'},
+  {id:'a13',year:2,cat:'speech',title:'「다문화 관광, 경기도의 글로벌 경쟁력입니다」',date:'2028.2월',status:0,body:'다문화 관광 조례 1년 성과|전반기 의정활동 총정리'},
+  {id:'a14',year:2,cat:'query',title:'「2027 전국체전 이후 경기도 체육·관광 인프라의 지역균형 활용 방안」',date:'2027.11월 정례회',status:0,body:'전국체전 경기장 74개소 사후 활용 계획|다문화 관광자원 조례 시행 후 성과|대부도·시화호 관광특구 지정 추진 경과|공공체육시설 지역 격차 해소 현황'},
+  {id:'a15',year:2,cat:'audit',title:'2027년 행정사무감사',date:'2027.11월',status:0,body:'전국체전 집행 감사|다문화 관광 조례 시행 성과|관광특구 추진|문화취약계층 지원'},
+  {id:'a16',year:2,cat:'budget',title:'2028년도 예산심의',date:'2027.12월',status:0,body:'해양관광 진흥 신규 예산|대부도 관광특구 후속 사업|다문화 관광 품질인증 운영|안산 문화체육시설 예산'},
 ],
 pledges:[
-  {id:'p1',title:'중장년 역량강화 모델 구축',status:0,link:'평생학습(55.8억), 문화일자리(23.3억), 아카데미 운영(5.5억)',body:'중장년 문화예술 활동 지원 조례 제정으로 법적 기반|경기도 평생교육진흥원 중장년 특화 프로그램 확대|문화일자리 사업 중장년 참여 비율 확대|세대 간 문화 교류 프로그램 개발'},
-  {id:'p2',title:'AI 시대 직업전환 교육 체계',status:0,link:'평생교육진흥 조례 개정, 콘텐츠 인력양성, 디지털 교육',body:'평생교육진흥 조례 개정으로 AI 교육 지원 근거|콘텐츠진흥원 인력양성 프로그램 중장년 확대|온라인·혼합형 학습 인프라 활용 직업 역량 교육'},
-  {id:'p3',title:'경력단절여성 문화일자리 지원',status:0,link:'문화일자리(23.3억), 문화예술진흥 조례 개정',body:'문화예술진흥 조례에 경력단절여성 우선 참여 근거|문화예술·콘텐츠 분야 재취업 지원 프로그램|경력단절여성 지원 관련 조례 2차년도 개정'},
-  {id:'p4',title:'데이터 기반 문화정책 수립',status:0,link:'도민 문화향유 실태조사, 문화지표, 문화영향평가',body:'데이터 기반 문화정책 수립 지원 조례 제정 (2차년도)|문화향유 실태조사 정례화 및 정책 환류 체계|문체국 사업 성과측정 데이터 체계 구축'},
+  {id:'p1',title:'대부도·시화호 관광특구 지정',status:0,link:'관광산업과 관광자원 개발사업(50개 세부사업) 및 관광특구 제도 활용',body:'경기관광공사·안산시 협력 관광특구 지정 타당성 조사|대부도 해양레저·갯벌체험·웰니스 관광자원 체계화|경기둘레길 갯길 권역(안산 구간) 활성화 연계|무장애 관광지 공간환경 개선사업 대부도 포함'},
+  {id:'p2',title:'다문화 관광·축제 활성화',status:0,link:'로컬관광 지원(21억), 지역축제 지원, 국제관광 사업 연계',body:'다문화 관광자원 조례 제정으로 법적 기반 마련|안산 다문화축제 → 경기대표관광축제 승격 추진|다문화마을 내 문화공간 재생사업 유치|외국인 관광객 유치 시 안산 다문화마을 코스 포함'},
+  {id:'p3',title:'지역 체육·문화 인프라 확충',status:0,link:'공공체육시설 조성(1,515억), 국민체육센터 건립, 문예회관 지원',body:'안산 공공체육시설 신규 조성 및 노후시설 개보수|국민체육센터 안산 추가 건립 (장애인밀착형/시니어친화형)|안산 국제거리극축제 지원 확대 및 상설 공연장|2027 전국체전 경기장 주민 활용 방안'},
+  {id:'p4',title:'다문화가정 문화향유 확대',status:0,link:'통합문화이용권(778억), 청년패스, 아동·청소년 예술교육',body:'통합문화이용권 다문화가정 접근성 강화 (다국어 안내)|아동·청소년 예술기회 지원(50개소) 안산 다문화 아동 특화|경기아트센터 아동 예술교육 45개소에 다문화 지역아동센터 우선 포함'},
 ],
 schedule:[
   {id:'s1',date:'2026.7',session:'제392회',cat:'임시회',text:'개원·상임위 구성, 업무보고, 문체국 현황 파악',status:0},
-  {id:'s2',date:'2026.8',session:'비회기',cat:'조례 준비',text:'중장년 문화예술 조례 비교법제, 실태조사',status:0},
-  {id:'s3',date:'2026.9',session:'제393회',cat:'5분발언①',text:'중장년 문화일자리, 경기도가 선도해야',status:0},
-  {id:'s4',date:'',session:'',cat:'질의 준비',text:'문화일자리·평생학습 자료 수집, 질의서 초안',status:0},
-  {id:'s5',date:'2026.10',session:'비회기',cat:'감사 준비',text:'공공기관 현황자료, 중장년 문화단체 간담회',status:0},
-  {id:'s6',date:'2026.11',session:'제394회',cat:'조례 제정',text:'중장년 문화예술 활동 지원 조례 발의',status:0},
-  {id:'s7',date:'',session:'',cat:'대집행부질의',text:'문화정책 중장년·취약계층 포용성 질의',status:0},
-  {id:'s8',date:'',session:'',cat:'행정사무감사',text:'문화재단·평생교육진흥원 등 6개 기관',status:0},
-  {id:'s9',date:'2026.12',session:'제394회',cat:'예산심의',text:'2027년도 예산안 심의 (중장년 문화·AI 교육 등)',status:0},
-  {id:'s10',date:'2027.2',session:'임시회',cat:'개정조례①',text:'평생교육진흥 조례 개정 (AI 직업전환 지원)',status:0},
-  {id:'s11',date:'',session:'',cat:'5분발언②',text:'AI 시대, 경기도 평생학습이 달라져야',status:0},
-  {id:'s12',date:'2027.4',session:'임시회',cat:'개정조례②',text:'문화예술진흥 조례 개정 (경력단절여성 지원)',status:0},
+  {id:'s2',date:'2026.8',session:'비회기',cat:'조례 준비',text:'다문화 관광자원 조례 비교법제, 대부도 현장조사',status:0},
+  {id:'s3',date:'2026.9',session:'제393회',cat:'5분발언①',text:'안산 다문화마을, 경기도 국제관광의 새로운 자산',status:0},
+  {id:'s4',date:'',session:'',cat:'질의 준비',text:'관광공사·안산시 자료 수집, 질의서 초안',status:0},
+  {id:'s5',date:'2026.10',session:'비회기',cat:'감사 준비',text:'공공기관 현황자료 수집, 다문화 주민 간담회',status:0},
+  {id:'s6',date:'2026.11',session:'제394회',cat:'조례 제정',text:'다문화 관광자원 육성 및 지원 조례 발의',status:0},
+  {id:'s7',date:'',session:'',cat:'대집행부질의',text:'관광산업 다문화자원 활용·관광특구 지정 질의',status:0},
+  {id:'s8',date:'',session:'',cat:'행정사무감사',text:'관광공사·문화재단·콘텐츠진흥원 등 6개 기관',status:0},
+  {id:'s9',date:'2026.12',session:'제394회',cat:'예산심의',text:'2027년도 예산안 심의 (관광특구·다문화축제 등)',status:0},
+  {id:'s10',date:'2027.2',session:'임시회',cat:'개정조례①',text:'관광진흥 조례 개정 (다문화 관광지구 유형 추가)',status:0},
+  {id:'s11',date:'',session:'',cat:'5분발언②',text:'대부도·시화호 해양관광 미래 제언',status:0},
+  {id:'s12',date:'2027.4',session:'임시회',cat:'개정조례②',text:'지역축제 조례 개정 (다문화축제 지원 강화)',status:0},
   {id:'s13',date:'2027.6',session:'정례회',cat:'결산 심의',text:'2026년도 결산, 추경예산안 심의',status:0},
   {id:'s_div',date:'',session:'',cat:'__divider__',text:'── 2차년도 ──',status:-1},
   {id:'s14',date:'2027.7',session:'임시회',cat:'업무보고',text:'문체국 2차년도 업무보고, 전국체전 최종 준비 점검',status:0},
-  {id:'s15',date:'2027.9',session:'임시회',cat:'5분발언③',text:'전국체전 이후 경기도민 스포츠 문화 제언',status:0},
-  {id:'s16',date:'',session:'',cat:'개정조례①',text:'경력단절여성 지원 조례 개정',status:0},
+  {id:'s15',date:'2027.9',session:'임시회',cat:'5분발언③',text:'전국체전 이후 안산 체육 인프라 활용 제언',status:0},
+  {id:'s16',date:'',session:'',cat:'개정조례①',text:'문화예술교육 조례 개정 (다문화 아동 특화)',status:0},
   {id:'s17',date:'2027.10',session:'비회기',cat:'전국체전',text:'제108회 전국체전 개최 (10.8~14, 경기도)',status:0},
-  {id:'s18',date:'2027.11',session:'정례회',cat:'조례 제정',text:'데이터 기반 문화정책 수립 지원 조례 발의',status:0},
-  {id:'s19',date:'',session:'',cat:'대집행부질의',text:'전국체전 이후 체육·문화 인프라 활용 질의',status:0},
-  {id:'s20',date:'',session:'',cat:'행정사무감사',text:'전국체전 집행·중장년 문화 조례·평생학습 감사',status:0},
+  {id:'s18',date:'2027.11',session:'정례회',cat:'조례 제정',text:'해양관광 진흥 및 지원 조례 발의',status:0},
+  {id:'s19',date:'',session:'',cat:'대집행부질의',text:'전국체전 이후 체육·관광 인프라 지역균형 질의',status:0},
+  {id:'s20',date:'',session:'',cat:'행정사무감사',text:'전국체전 집행·다문화관광 조례·관광특구 감사',status:0},
   {id:'s21',date:'2027.12',session:'정례회',cat:'예산심의',text:'2028년도 예산안 심의',status:0},
-  {id:'s22',date:'2028.2',session:'임시회',cat:'개정조례②',text:'중장년 문화예술 조례 보완 개정',status:0},
-  {id:'s23',date:'',session:'',cat:'5분발언④',text:'데이터로 보는 경기도 문화정책, 전반기 총정리',status:0},
+  {id:'s22',date:'2028.2',session:'임시회',cat:'개정조례②',text:'다문화 관광자원 조례 보완 개정',status:0},
+  {id:'s23',date:'',session:'',cat:'5분발언④',text:'다문화 관광 조례 1년 성과, 전반기 총정리',status:0},
   {id:'s24',date:'2028.6',session:'정례회',cat:'결산·마무리',text:'2027년도 결산, 전반기 의정활동 성과 정리',status:0},
 ],
 };
@@ -219,38 +229,65 @@ let data;
 function loadData(){try{const s=localStorage.getItem(STORAGE);data=s?JSON.parse(s):JSON.parse(JSON.stringify(DEFAULT))}catch(e){data=JSON.parse(JSON.stringify(DEFAULT))}}
 function saveData(){localStorage.setItem(STORAGE,JSON.stringify(data))}
 function resetAll(){if(confirm('모든 편집 내용을 초기 상태로 되돌리시겠습니까?')){localStorage.removeItem(STORAGE);loadData();renderAll()}}
-let nextId=1000;function genId(){return 'n'+(nextId++)}
+
+let nextId=1000;
+function genId(){return 'n'+(nextId++)}
+
+/* ===== TAB / EDIT MODE ===== */
 function showTab(n){document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===n));document.querySelectorAll('.panel').forEach((p,i)=>p.classList.toggle('active',i===n))}
 function toggleEditMode(){editMode=document.getElementById('editToggle').checked;document.body.classList.toggle('edit-mode',editMode);renderAll()}
+
+/* ===== STATUS TOGGLE ===== */
 function cycleStatus(arr,idx){arr[idx].status=(arr[idx].status+1)%3;saveData();renderAll()}
+
+/* ===== DRAG & DROP (cards) ===== */
 let dragSrc=null,dragArr=null;
 function dragStart(e,arr,idx){dragSrc=idx;dragArr=arr;e.target.closest('.card').classList.add('dragging')}
-function dragEnd(e){document.querySelectorAll('.card').forEach(c=>c.classList.remove('dragging','drag-over'))}
+function dragEnd(e){document.querySelectorAll('.card').forEach(c=>{c.classList.remove('dragging','drag-over')})}
 function dragOver(e){e.preventDefault();e.target.closest('.card')?.classList.add('drag-over')}
 function dragLeave(e){e.target.closest('.card')?.classList.remove('drag-over')}
 function drop(e,arr,idx){e.preventDefault();if(dragArr!==arr||dragSrc===idx)return;const item=arr.splice(dragSrc,1)[0];arr.splice(idx,0,item);saveData();renderAll()}
+
+/* ===== DRAG & DROP (table rows) ===== */
 let dragRowSrc=null;
 function rowDragStart(e,idx){dragRowSrc=idx;e.target.closest('tr').style.opacity='.4'}
 function rowDragEnd(e){e.target.closest('tr').style.opacity='1'}
 function rowDragOver(e){e.preventDefault()}
 function rowDrop(e,idx){e.preventDefault();if(dragRowSrc===null||dragRowSrc===idx)return;const item=data.schedule.splice(dragRowSrc,1)[0];data.schedule.splice(idx,0,item);dragRowSrc=null;saveData();renderAll()}
+
+/* ===== INLINE EDIT ===== */
+function makeEditable(text,onSave){const el=document.createElement('span');el.textContent=text;if(editMode){el.contentEditable='true';el.addEventListener('blur',()=>{onSave(el.textContent.trim());saveData()})}return el}
+
+/* ===== DELETE ===== */
 function deleteItem(arr,idx){if(confirm('이 항목을 삭제하시겠습니까?')){arr.splice(idx,1);saveData();renderAll()}}
+
+/* ===== ADD ===== */
 function addActivity(year){data.activities.push({id:genId(),year,cat:'etc',title:'새 항목',date:'시기 입력',status:0,body:'내용 입력'});saveData();renderAll();showTab(1)}
 function addPledge(){data.pledges.push({id:genId(),title:'새 공약',status:0,link:'연계 사업 입력',body:'세부 내용 입력'});saveData();renderAll();showTab(2)}
 function addSchedule(){data.schedule.push({id:genId(),date:'시기',session:'회기',cat:'구분',text:'내용 입력',status:0});saveData();renderAll();showTab(3)}
+
+/* ===== RENDER HELPERS ===== */
 function bulletHTML(text){if(!text)return '';const items=text.split('|').filter(Boolean);return '<ul class="bl">'+items.map(i=>'<li>'+escHtml(i)+'</li>').join('')+'</ul>'}
 function escHtml(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
 
+/* ===== RENDER: DASHBOARD ===== */
 function renderDashboard(){
   const p=document.getElementById('panel-0');
-  const count=(arr,fn)=>{let d=0,t=0;arr.forEach(i=>{if(fn(i)){t++;if(i.status===2)d++}});return{d,t}};
-  const bills=count(data.activities,i=>i.cat==='bill'),amends=count(data.activities,i=>i.cat==='amend');
-  const speeches=count(data.activities,i=>i.cat==='speech'),queries=count(data.activities,i=>i.cat==='query');
+  const count=(arr,catPrefix)=>{let d=0,t=0;arr.forEach(i=>{if(typeof catPrefix==='function'?catPrefix(i):true){t++;if(i.status===2)d++}});return{d,t}};
+  const bills=count(data.activities,i=>i.cat==='bill');
+  const amends=count(data.activities,i=>i.cat==='amend');
+  const speeches=count(data.activities,i=>i.cat==='speech');
+  const queries=count(data.activities,i=>i.cat==='query');
   const pledges=count(data.pledges,()=>true);
-  const totalD=bills.d+amends.d+speeches.d+queries.d,totalT=bills.t+amends.t+speeches.t+queries.t;
-  const pct=totalT?Math.round(totalD/totalT*100):0,ppct=pledges.t?Math.round(pledges.d/pledges.t*100):0;
+  const totalD=bills.d+amends.d+speeches.d+queries.d;
+  const totalT=bills.t+amends.t+speeches.t+queries.t;
+  const pct=totalT?Math.round(totalD/totalT*100):0;
+  const ppct=pledges.t?Math.round(pledges.d/pledges.t*100):0;
+
+  // find next upcoming
   const upcoming=data.activities.filter(a=>a.status<2).slice(0,1);
   const nextText=upcoming.length?'<strong>'+escHtml(upcoming[0].date)+'</strong> — '+escHtml(upcoming[0].title):'모든 활동 완료!';
+
   p.innerHTML=`
     <div class="next-alert"><span style="font-size:20px">🔔</span><div class="text">다음 예정: ${nextText}</div></div>
     <div class="metric-row">
@@ -262,25 +299,31 @@ function renderDashboard(){
     <div class="card"><div class="card-title">📈 전체 의정활동 진행률</div><div class="card-body"><div class="prog-bar"><div class="prog-fill" style="width:${pct}%"></div></div><div class="prog-text">전체 ${totalT}개 항목 중 ${totalD}개 완료 (${pct}%)</div></div></div>
     <div class="card"><div class="card-title">📋 공약이행 현황</div><div class="card-body"><div class="prog-bar"><div class="prog-fill" style="width:${ppct}%"></div></div><div class="prog-text">${pledges.t}개 핵심공약 중 ${pledges.d}개 완료 (${ppct}%)</div></div></div>
     <div class="section-title">📌 주요 예정 활동</div>
-    ${data.activities.filter(a=>a.status<2).slice(0,8).map(a=>`<div class="card" style="padding:12px 20px"><div style="display:flex;align-items:center;justify-content:space-between"><div><span style="font-size:12px;color:var(--sec);font-weight:600">${escHtml(a.date)}</span> <span style="font-size:13px;color:#444;margin-left:8px">${escHtml(a.title)}</span></div><span class="badge ${statusClass[a.status]}" style="cursor:default;font-size:10px">${statusCycle[a.status]}</span></div></div>`).join('')}`;
+    ${data.activities.filter(a=>a.status<2).slice(0,8).map(a=>`<div class="card" style="padding:12px 20px"><div style="display:flex;align-items:center;justify-content:space-between"><div><span style="font-size:12px;color:var(--sec);font-weight:600">${escHtml(a.date)}</span> <span style="font-size:13px;color:#444;margin-left:8px">${escHtml(a.title)}</span></div><span class="badge ${statusClass[a.status]}" style="cursor:default;font-size:10px">${statusCycle[a.status]}</span></div></div>`).join('')}
+  `;
 }
 
+/* ===== RENDER: ACTIVITIES ===== */
 function renderActivities(){
-  const p=document.getElementById('panel-1');let html='';
+  const p=document.getElementById('panel-1');
+  let html='';
   [1,2].forEach(yr=>{
     html+=`<div class="section-title">${yr===1?'📘':'📙'} ${yr}차년도 (${yr===1?'2026.7 ~ 2027.6':'2027.7 ~ 2028.6'})</div>`;
     const items=data.activities.filter(a=>a.year===yr);
+    // group by cat
     const cats=[...new Set(items.map(a=>a.cat))];
     cats.forEach(cat=>{
       html+=`<div class="sub-title">${catLabels[cat]||cat}</div>`;
-      items.filter(a=>a.cat===cat).forEach(a=>{
+      items.filter(a=>a.cat===cat).forEach((a,ci)=>{
         const gIdx=data.activities.indexOf(a);
         const bodyLines=a.body?(a.body.includes('|')?bulletHTML(a.body):'<p>'+escHtml(a.body).replace(/\n/g,'<br>')+'</p>'):'';
         const detailsHtml=a.details?'<details style="margin-top:8px"><summary style="font-size:12px;color:var(--sec);cursor:pointer;font-weight:500">준비사항 상세</summary>'+bulletHTML(a.details)+'</details>':'';
         html+=`<div class="card" draggable="${editMode}" ondragstart="dragStart(event,data.activities,${gIdx})" ondragend="dragEnd(event)" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="drop(event,data.activities,${gIdx})">
-          <span class="grip" draggable="false">⠿</span><button class="del-btn" onclick="deleteItem(data.activities,${gIdx})">✕</button>
+          <span class="grip" draggable="false">⠿</span>
+          <button class="del-btn" onclick="deleteItem(data.activities,${gIdx})">✕</button>
           <div class="card-title"><span class="badge ${statusClass[a.status]}" onclick="cycleStatus(data.activities,${gIdx})">${statusCycle[a.status]}</span> <span ${editMode?'contenteditable="true" onblur="data.activities['+gIdx+'].title=this.textContent.trim();saveData()"':''}>${escHtml(a.title)}</span></div>
-          <div class="card-body"><strong>시기:</strong> <span ${editMode?'contenteditable="true" onblur="data.activities['+gIdx+'].date=this.textContent.trim();saveData()"':''}>${escHtml(a.date)}</span><br>${bodyLines}${detailsHtml}</div></div>`;
+          <div class="card-body"><strong>시기:</strong> <span ${editMode?'contenteditable="true" onblur="data.activities['+gIdx+'].date=this.textContent.trim();saveData()"':''}>${escHtml(a.date)}</span><br>${bodyLines}${detailsHtml}</div>
+        </div>`;
       });
     });
     html+=`<button class="add-btn" onclick="addActivity(${yr})">＋ ${yr}차년도 항목 추가</button>`;
@@ -288,15 +331,20 @@ function renderActivities(){
   p.innerHTML=html;
 }
 
+/* ===== RENDER: PLEDGES ===== */
 function renderPledges(){
-  const p=document.getElementById('panel-2');let html='<div class="section-title">🎯 핵심 공약 이행 현황</div>';
+  const p=document.getElementById('panel-2');
+  let html='<div class="section-title">🎯 핵심 공약 이행 현황</div>';
   data.pledges.forEach((pl,i)=>{
     html+=`<div class="card" draggable="${editMode}" ondragstart="dragStart(event,data.pledges,${i})" ondragend="dragEnd(event)" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="drop(event,data.pledges,${i})">
-      <span class="grip" draggable="false">⠿</span><button class="del-btn" onclick="deleteItem(data.pledges,${i})">✕</button>
+      <span class="grip" draggable="false">⠿</span>
+      <button class="del-btn" onclick="deleteItem(data.pledges,${i})">✕</button>
       <div class="card-title"><span class="badge ${statusClass[pl.status]}" onclick="cycleStatus(data.pledges,${i})">${statusCycle[pl.status]}</span> <span ${editMode?'contenteditable="true" onblur="data.pledges['+i+'].title=this.textContent.trim();saveData()"':''}>${escHtml(pl.title)}</span></div>
-      <div class="card-body"><strong>▶ 문체위 연계:</strong> <span ${editMode?'contenteditable="true" onblur="data.pledges['+i+'].link=this.textContent.trim();saveData()"':''}>${escHtml(pl.link)}</span>${bulletHTML(pl.body)}</div></div>`;
+      <div class="card-body"><strong>▶ 문체위 연계:</strong> <span ${editMode?'contenteditable="true" onblur="data.pledges['+i+'].link=this.textContent.trim();saveData()"':''}>${escHtml(pl.link)}</span>${bulletHTML(pl.body)}</div>
+    </div>`;
   });
-  html+='<button class="add-btn" onclick="addPledge()">＋ 공약 추가</button>';p.innerHTML=html;
+  html+='<button class="add-btn" onclick="addPledge()">＋ 공약 추가</button>';
+  p.innerHTML=html;
 }
 
 /* ===== CALENDAR ===== */
@@ -354,15 +402,18 @@ function renderCalendar(){
   const today=new Date();const tY=today.getFullYear(),tM=today.getMonth()+1,tD=today.getDate();
   const mStart=ymd(calYear,calMonth,1),mEnd=ymd(calYear,calMonth,dim);
 
+  /* 이벤트 수집 */
   const evts={};
   const add=(d,text,cls,pri)=>{if(!evts[d])evts[d]=[];evts[d].push({text,cls,pri:pri||5})};
 
+  /* 오버레이 이벤트 */
   OVERLAY.forEach(([s,e,label,cls,pri])=>{
     if(e<mStart||s>mEnd)return;
     const ds=s<mStart?1:(s%100),de=e>mEnd?dim:((Math.floor(e/100)%100===calMonth)?e%100:dim);
     for(let d=ds;d<=de;d++) add(d, d===ds?label:'', cls, pri);
   });
 
+  /* 의원 일정 이벤트 */
   data.schedule.forEach((s,i)=>{
     if(s.cat==='__divider__')return;
     const pd=parseSchedDate(s.date);
@@ -370,8 +421,10 @@ function renderCalendar(){
     add(pd.d||1, s.cat+': '+s.text, 'st'+s.status, 5);
   });
 
+  /* 회기 배경 체크 */
   function inSess(d){const dn=ymd(calYear,calMonth,d);return SESS.some(([s,e])=>dn>=s&&dn<=e)}
 
+  /* 렌더링 */
   let html='<div class="cal-wrap"><div class="cal-nav">';
   html+='<button onclick="calPrev()">◀</button>';
   html+=`<span class="cal-month">${calYear}년 ${calMonth}월</span>`;
@@ -393,8 +446,11 @@ function renderCalendar(){
       const sorted=evts[d].sort((a,b)=>a.pri-b.pri);
       const show=sorted.slice(0,4);
       show.forEach(ev=>{
-        if(ev.text) html+=`<div class="cal-evt ${ev.cls}" title="${escHtml(ev.text)}">${escHtml(ev.text)}</div>`;
-        else html+=`<div class="cal-evt ${ev.cls} cal-bar"></div>`;
+        if(ev.text){
+          html+=`<div class="cal-evt ${ev.cls}" title="${escHtml(ev.text)}">${escHtml(ev.text)}</div>`;
+        } else {
+          html+=`<div class="cal-evt ${ev.cls} cal-bar"></div>`;
+        }
       });
       if(sorted.length>4) html+=`<div class="cal-more">+${sorted.length-4}</div>`;
     }
@@ -411,10 +467,15 @@ function renderCalendar(){
   return html;
 }
 
+/* ===== RENDER: SCHEDULE ===== */
 function renderSchedule(){
-  const p=document.getElementById('panel-3');let rows='';
+  const p=document.getElementById('panel-3');
+  let rows='';
   data.schedule.forEach((s,i)=>{
-    if(s.cat==='__divider__'){rows+=`<tr class="divider-row"><td colspan="${editMode?'7':'5'}">${escHtml(s.text)}</td></tr>`;return;}
+    if(s.cat==='__divider__'){
+      rows+=`<tr class="divider-row"><td colspan="${editMode?'7':'5'}">${escHtml(s.text)}</td></tr>`;
+      return;
+    }
     rows+=`<tr draggable="${editMode}" ondragstart="rowDragStart(event,${i})" ondragend="rowDragEnd(event)" ondragover="rowDragOver(event)" ondrop="rowDrop(event,${i})">
       ${editMode?'<td class="grip-cell" style="display:table-cell">⠿</td>':''}
       <td ${editMode?'contenteditable="true" onblur="data.schedule['+i+'].date=this.textContent.trim();saveData();renderSchedule()"':''}>${escHtml(s.date)}</td>
@@ -422,39 +483,50 @@ function renderSchedule(){
       <td ${editMode?'contenteditable="true" onblur="data.schedule['+i+'].cat=this.textContent.trim();saveData()"':''}>${escHtml(s.cat)}</td>
       <td ${editMode?'contenteditable="true" onblur="data.schedule['+i+'].text=this.textContent.trim();saveData()"':''}>${escHtml(s.text)}</td>
       <td><span class="badge ${statusClass[s.status]}" onclick="cycleStatus(data.schedule,${i})">${statusCycle[s.status]}</span></td>
-      ${editMode?'<td class="del-cell" style="display:table-cell" onclick="deleteItem(data.schedule,'+i+')">🗑</td>':''}</tr>`;
+      ${editMode?'<td class="del-cell" style="display:table-cell" onclick="deleteItem(data.schedule,'+i+')">🗑</td>':''}
+    </tr>`;
   });
   p.innerHTML=`<div class="section-title">📅 전반기 의정활동 일정표</div>
     ${renderCalendar()}
     <div class="section-title" style="margin-top:32px">📋 일정 상세 목록</div>
     <table class="tbl"><thead><tr>${editMode?'<th style="width:40px"></th>':''}
     <th style="width:80px">시기</th><th style="width:80px">회기</th><th style="width:110px">구분</th><th>주요 내용</th><th style="width:60px">상태</th>${editMode?'<th style="width:40px"></th>':''}</tr></thead>
-    <tbody>${rows}</tbody></table><button class="add-btn" onclick="addSchedule()">＋ 일정 추가</button>`;
+    <tbody>${rows}</tbody></table>
+    <button class="add-btn" onclick="addSchedule()">＋ 일정 추가</button>`;
 }
 
+/* ===== RENDER: PROFILE (static) ===== */
 function renderProfile(){
   document.getElementById('panel-4').innerHTML=`
     <div class="section-title">👤 의원 프로필</div>
     <table class="prof-tbl">
-      <tr><th>성명</th><td>이미정</td></tr>
+      <tr><th>성명</th><td>황은화 (黃銀花, HWANG EUN HWA)</td></tr>
+      <tr><th>생년월일</th><td>1974. 4. 14. (52세)</td></tr>
       <tr><th>소속정당</th><td>더불어민주당</td></tr>
-      <tr><th>선거구</th><td>비례대표</td></tr>
-      <tr><th>당선횟수</th><td>초선 (경기도의회)</td></tr>
+      <tr><th>선거구</th><td>안산시 제7선거구 (선감·대부·선부동)</td></tr>
+      <tr><th>당선횟수</th><td>초선 (경기도의회) / 전) 안산시의원 2선</td></tr>
       <tr><th>상임위원회</th><td>문화체육관광위원회</td></tr>
-      <tr><th>핵심 전문성</th><td>중장년 일자리·평생교육, AI 디지털 전환, 경력단절여성 지원, 데이터 기반 정책</td></tr>
+      <tr><th>대표성</th><td>다문화이주여성 최초 경기도의회 당선 의원</td></tr>
     </table>
-    <div class="sub-title">핵심 공약 방향</div>
-    <ul class="bl"><li>중장년 역량강화 모델 구축 — 50+ 세대 문화예술 참여·일자리 확대</li><li>AI 시대 직업전환 교육 — 평생학습 인프라 활용 디지털 역량교육</li><li>경력단절여성 지원 — 문화·콘텐츠 분야 재취업 프로그램</li><li>데이터 기반 문화정책 — 문화지표 조사 정례화, 성과 환류 체계</li></ul>
+    <div class="sub-title">학력</div>
+    <ul class="bl"><li>안산대학교 사회복지학과 졸업</li><li>한양대학교 다문화교육학 석사</li></ul>
+    <div class="sub-title">주요 경력</div>
+    <ul class="bl"><li>(전) 안산시의회 의원 2선 (제8·9대)</li><li>(전) 안산시의회 예산결산특별위원회 위원장</li><li>(전) 경기도 다문화가족지원 정책위원</li><li>(전) 안산시 외국인주민 및 다문화가족 지원 조례 제정 주도</li><li>(현) 안산 다문화마을특구 활성화 실무경험 보유</li></ul>
     <div class="section-title">🔗 문체국 주요사업 연계 분석</div>
-    <div class="card"><div class="card-title">1. 경기도민 평생학습 (55.8억)</div><div class="card-body"><strong>현황:</strong> 100세 시대 배움도시, 경기평생교육학습관 6개소<br><strong>연계점:</strong> 중장년 대상 문화예술·디지털 역량 프로그램 확대, AI 교육 특화</div></div>
-    <div class="card"><div class="card-title">2. 문화일자리 사업 (23.3억)</div><div class="card-body"><strong>현황:</strong> 문화도시 코디네이터, 공공디자이너 등 일자리 창출<br><strong>연계점:</strong> 중장년·경력단절여성 우선 참여, 사회적 경제 연계</div></div>
-    <div class="card"><div class="card-title">3. 경기아카데미 운영 (5.5억)</div><div class="card-body"><strong>현황:</strong> 도민 대상 인문·교양 아카데미<br><strong>연계점:</strong> 중장년 특화 인문·교양 프로그램, 세대 간 문화 교류</div></div>
-    <div class="card"><div class="card-title">4. 콘텐츠 인력양성</div><div class="card-body"><strong>현황:</strong> 1인 미디어 육성(17억), 영상미디어센터<br><strong>연계점:</strong> 중장년 디지털 콘텐츠 창작 교육, 경력단절여성 미디어 교육</div></div>
-    <div class="card"><div class="card-title">5. 통합문화이용권 (778억)</div><div class="card-body"><strong>현황:</strong> 문화누리카드 513,404명<br><strong>연계점:</strong> 중장년 취약계층 문화향유 사각지대 해소, 데이터 분석 활용</div></div>`;
+    <div class="card"><div class="card-title">1. 경기 로컬관광 지원 (관광산업과, 21억)</div><div class="card-body"><strong>현황:</strong> 시군 주도 로컬관광 콘텐츠 공모 6건, 민·관 네트워크 41개소<br><strong>연계점:</strong> 안산 대부도·시화호 로컬관광 콘텐츠, 다문화 음식·문화 체험형 관광상품<br><strong>개선:</strong> 다문화 특화 로컬관광 유형 신설</div></div>
+    <div class="card"><div class="card-title">2. 대표 지역축제 지원</div><div class="card-body"><strong>현황:</strong> 문화관광축제 2개, 경기대표관광축제 9개 지원<br><strong>연계점:</strong> 안산 국제거리극축제, 다문화축제 → 경기대표관광축제 승격</div></div>
+    <div class="card"><div class="card-title">3. 웰니스·워케이션 관광 (6억)</div><div class="card-body"><strong>현황:</strong> 웰니스 관광지 20개소, 워케이션 11개소<br><strong>연계점:</strong> 대부도·시화호 해양 치유관광 → 웰니스 인증, 시화 권역 워케이션 확대</div></div>
+    <div class="card"><div class="card-title">4. 무장애 관광지 (11억)</div><div class="card-body"><strong>현황:</strong> 7개 시군 7개소, 안산 미포함<br><strong>연계점:</strong> 대부도 관광지 무장애 환경 개선 유치</div></div>
+    <div class="card"><div class="card-title">5. 문화공간 재생사업 (45.9억)</div><div class="card-body"><strong>현황:</strong> 유휴공간 문화재생 3개소, 안산 명화극장 선정<br><strong>연계점:</strong> 다문화마을 유휴공간을 문화예술 체험공간으로 재생</div></div>
+    <div class="card"><div class="card-title">6. 통합문화이용권·기회소득 (778억)</div><div class="card-body"><strong>현황:</strong> 문화누리카드 513,404명<br><strong>연계점:</strong> 다문화가정·이주여성 문화 접근성, 다국어 안내 필요</div></div>
+  `;
 }
 
+/* ===== RENDER ALL ===== */
 function renderAll(){renderDashboard();renderActivities();renderPledges();renderSchedule();renderProfile()}
-loadData();renderAll();
+
+loadData();
+renderAll();
 </script>
 </body>
 </html>
