@@ -31,8 +31,7 @@ body.edit-mode .reset-btn{display:inline-block}
 .tab:hover{color:var(--sec)}
 .tab.active{color:var(--sec);border-bottom-color:var(--sec)}
 .content{max-width:960px;margin:0 auto;padding:24px 32px}
-.panel{display:none}
-.panel.active{display:block}
+.panel{display:none}.panel.active{display:block}
 .metric-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
 .metric{background:var(--wh);border-radius:10px;padding:16px 20px;border:1px solid var(--bd)}
 .metric-label{font-size:12px;color:var(--gr);margin-bottom:4px}
@@ -62,13 +61,11 @@ ul.bl li::before{content:'●';position:absolute;left:0;color:var(--acc);font-si
 .prof-tbl th{background:var(--pri);color:var(--wh);padding:10px 14px;text-align:center;font-weight:500;width:140px;font-size:13px}
 .prof-tbl td{padding:10px 14px;border:1px solid var(--bd);font-size:13px}
 .prog-bar{height:14px;background:#E0E4E8;border-radius:7px;overflow:hidden;margin:8px 0 4px}
-.prog-fill{height:100%;background:var(--sec);border-radius:7px;transition:width .5s}
+.prog-fill{height:100%;border-radius:7px;transition:width .5s}
 .prog-text{font-size:12px;color:var(--gr)}
 .next-alert{background:linear-gradient(135deg,var(--lbg),var(--lbg2));border:1px solid var(--acc);border-radius:10px;padding:14px 20px;margin-bottom:20px;display:flex;align-items:center;gap:12px}
 .next-alert .text{font-size:13px;color:var(--pri)}
 .next-alert .text strong{color:var(--sec)}
-
-/* Edit mode */
 .grip{display:none;color:var(--gr);cursor:grab;font-size:18px;padding:0 4px;flex-shrink:0;user-select:none}
 .grip:active{cursor:grabbing}
 body.edit-mode .grip{display:inline-block}
@@ -78,22 +75,15 @@ body.edit-mode .del-btn{display:block}
 .add-btn{display:none;border:2px dashed var(--acc);background:transparent;color:var(--acc);padding:12px;border-radius:10px;width:100%;cursor:pointer;font-size:14px;font-weight:600;margin:8px 0 16px;transition:all .2s}
 .add-btn:hover{background:var(--lbg);border-color:var(--sec)}
 body.edit-mode .add-btn{display:block}
-body.edit-mode .card{cursor:default}
 body.edit-mode .card.dragging{opacity:.4;border:2px dashed var(--acc)}
 body.edit-mode .card.drag-over{border-top:3px solid var(--sec)}
 [contenteditable=true]{outline:none;border-bottom:1px dashed var(--acc);padding:0 2px;min-width:20px}
 [contenteditable=true]:focus{background:var(--lbg2);border-bottom-color:var(--sec)}
-
-/* Sched table edit */
 body.edit-mode .tbl td[contenteditable]{border-bottom:1px dashed var(--acc)}
-.tbl .add-row-btn{display:none;background:transparent;border:2px dashed var(--acc);color:var(--acc);padding:8px;width:100%;cursor:pointer;font-size:13px;font-weight:600}
-body.edit-mode .tbl .add-row-btn{display:block}
 .tbl .del-cell{display:none;color:var(--red);cursor:pointer;font-size:14px;text-align:center}
 body.edit-mode .tbl .del-cell{display:table-cell}
 .tbl .grip-cell{display:none;cursor:grab;color:var(--gr);font-size:14px;text-align:center}
 body.edit-mode .tbl .grip-cell{display:table-cell}
-
-/* Calendar */
 .cal-wrap{margin-bottom:24px}
 .cal-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:12px}
 .cal-nav button{background:var(--wh);border:1px solid var(--bd);border-radius:6px;width:32px;height:32px;cursor:pointer;font-size:16px;color:var(--pri);display:flex;align-items:center;justify-content:center}
@@ -110,9 +100,7 @@ body.edit-mode .tbl .grip-cell{display:table-cell}
 .cal-cell.sun .cal-day{color:#E53935}
 .cal-cell.sat .cal-day{color:var(--sec)}
 .cal-evt{display:block;background:var(--sec);color:var(--wh);font-size:10px;padding:1px 4px;border-radius:3px;margin-bottom:2px;overflow:hidden;cursor:default;line-height:1.4;word-break:break-all}
-.cal-evt.st0{background:var(--acc)}
-.cal-evt.st1{background:#D4A017}
-.cal-evt.st2{background:var(--green)}
+.cal-evt.st0{background:var(--acc)}.cal-evt.st1{background:#D4A017}.cal-evt.st2{background:var(--green)}
 .cal-evt:hover{opacity:.85}
 .cal-more{font-size:10px;color:var(--sec);cursor:pointer;font-weight:500}
 .cal-legend{display:flex;gap:16px;justify-content:center;margin-top:8px;font-size:11px;color:var(--gr)}
@@ -126,8 +114,6 @@ body.edit-mode .tbl .grip-cell{display:table-cell}
 .cal-legend2{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:4px;font-size:11px;color:var(--gr)}
 .cal-legend2 span{display:flex;align-items:center;gap:4px}
 .cal-legend2 i{width:10px;height:10px;border-radius:2px;display:inline-block}
-
-/* Pledge accordion */
 .pledge-view-toggle{display:flex;gap:0;margin-bottom:16px}
 .pledge-view-btn{flex:1;padding:10px;text-align:center;font-size:13px;font-weight:600;cursor:pointer;border:1px solid var(--bd);background:var(--wh);color:var(--gr);transition:all .2s}
 .pledge-view-btn:first-child{border-radius:8px 0 0 8px}
@@ -154,11 +140,14 @@ body.edit-mode .tbl .grip-cell{display:table-cell}
 .acc-item .acc-st.s1{border-color:var(--amber);background:var(--amber-bg);color:var(--amber)}
 .acc-item .acc-st.s2{border-color:var(--green);background:var(--green-bg);color:var(--green)}
 .pledge-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.small-add{background:transparent;border:1px dashed var(--acc);color:var(--acc);padding:4px 12px;border-radius:6px;cursor:pointer;font-size:12px;display:none}
+body.edit-mode .small-add{display:inline-block}
+.small-del{margin-left:auto;color:var(--red);cursor:pointer;font-size:12px;flex-shrink:0;display:none}
+body.edit-mode .small-del{display:inline-block}
 @media(max-width:768px){.metric-row{grid-template-columns:repeat(2,1fr)}.content{padding:16px}.tabs{padding:0 16px}.header{padding:16px}.cal-cell{min-height:60px}.pledge-layout{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
 <div class="top-bar">
   <h1>📋 제12대 경기도의회 전반기 의정지원 계획 <span class="period">2026.7 ~ 2028.6</span></h1>
   <div class="top-right">
@@ -166,7 +155,6 @@ body.edit-mode .tbl .grip-cell{display:table-cell}
     <label class="edit-toggle"><input type="checkbox" id="editToggle" onchange="toggleEditMode()"><span class="toggle-track"></span>편집 모드</label>
   </div>
 </div>
-
 <div class="header">
   <div class="avatar"><img src="photo.jpg" alt="황은화" onerror="this.remove();this.parentNode.textContent='황'"></div>
   <div class="header-info">
@@ -174,7 +162,6 @@ body.edit-mode .tbl .grip-cell{display:table-cell}
     <p>더불어민주당 · 안산시 제7선거구 (신길,원곡,선부1.2,백운동) · 문화체육관광위원회</p>
   </div>
 </div>
-
 <div class="tabs">
   <div class="tab active" onclick="showTab(0)">📊 대시보드</div>
   <div class="tab" onclick="showTab(1)">🏛️ 문체위 활동</div>
@@ -182,7 +169,6 @@ body.edit-mode .tbl .grip-cell{display:table-cell}
   <div class="tab" onclick="showTab(3)">📅 일정표</div>
   <div class="tab" onclick="showTab(4)">👤 프로필</div>
 </div>
-
 <div class="content">
   <div class="panel active" id="panel-0"></div>
   <div class="panel" id="panel-1"></div>
@@ -190,42 +176,27 @@ body.edit-mode .tbl .grip-cell{display:table-cell}
   <div class="panel" id="panel-3"></div>
   <div class="panel" id="panel-4"></div>
 </div>
-
 <script>
-const STORAGE='hwang_v3';
+const STORAGE='hwang_v4';
 const statusCycle=['예정','진행중','완료'];
 const statusClass=['badge-plan','badge-prog','badge-done'];
 const catLabels={bill:'조례 제정',amend:'조례 개정',speech:'5분발언',query:'대집행부질의',audit:'행정사무감사',budget:'예산심의',etc:'기타'};
-let editMode=false;
-let pledgeView='field';
+let editMode=false,pledgeView='field';
 
-/* ===== 선거 공약 데이터 (분야별) ===== */
 const ELECTION_FIELD=[
-  {cat:'교통',icon:'🚌',color:'#2E75B6',items:[
-    '신길·선부권 광역버스 노선 확대 추진','신안산선 연계 교통체계 개선 추진','상습정체구간 교통환경 개선','공영주차장 확충 및 스마트 주차 시스템 확대','노후 버스정류장 스마트쉼터 설치 확대']},
-  {cat:'안전',icon:'🛡️',color:'#D35400',items:[
-    'CCTV 확대 및 노후장비 교체','원곡·선부권 안심조명 확대','어린이 통학로 정비 추진','재난·침수 대응시설 개선','다중밀집지역 안전관리 강화']},
-  {cat:'복지',icon:'💛',color:'#8E44AD',items:[
-    '초등 돌봄 및 방과후 지원 확대','여성 안심귀갓길 확대','어르신 경로당 환경개선 지원','장애인 이동편의 지원 강화','다문화가정 생활지원 확대']},
-  {cat:'민생경제',icon:'💰',color:'#0F6E56',items:[
-    '전통시장 시설 현대화 지원','골목상권 특화거리 조성 추진','소상공인 디지털 전환 지원','청년창업 지원공간 확대','다문화 관광상권 활성화 추진']}
+  {cat:'교통',icon:'🚌',color:'#2E75B6',items:['신길·선부권 광역버스 노선 확대 추진','신안산선 연계 교통체계 개선 추진','상습정체구간 교통환경 개선','공영주차장 확충 및 스마트 주차 시스템 확대','노후 버스정류장 스마트쉼터 설치 확대']},
+  {cat:'안전',icon:'🛡️',color:'#D35400',items:['CCTV 확대 및 노후장비 교체','원곡·선부권 안심조명 확대','어린이 통학로 정비 추진','재난·침수 대응시설 개선','다중밀집지역 안전관리 강화']},
+  {cat:'복지',icon:'💛',color:'#8E44AD',items:['초등 돌봄 및 방과후 지원 확대','여성 안심귀갓길 확대','어르신 경로당 환경개선 지원','장애인 이동편의 지원 강화','다문화가정 생활지원 확대']},
+  {cat:'민생경제',icon:'💰',color:'#0F6E56',items:['전통시장 시설 현대화 지원','골목상권 특화거리 조성 추진','소상공인 디지털 전환 지원','청년창업 지원공간 확대','다문화 관광상권 활성화 추진']}
 ];
-
-/* ===== 선거 공약 데이터 (동네별) ===== */
 const ELECTION_AREA=[
-  {cat:'신길동',icon:'🏭',color:'#1B3A5C',items:[
-    '신길산단 연계 교통체계 개선','출퇴근 정체구간 도로 개선 추진','청년 일자리 연계사업 확대','산업단지 주변 생활환경 개선']},
-  {cat:'원곡동',icon:'🌏',color:'#2E75B6',items:[
-    '다문화가족 지원센터 기능 확대','외국인 밀집지역 안전환경 개선','다국어 생활안내 시스템 구축','글로벌 상권 활성화 지원','다문화 청소년 교육지원 확대']},
-  {cat:'백운동',icon:'🏘️',color:'#D35400',items:[
-    '노후 골목환경 정비 추진','CCTV 및 안심조명 확대','도시재생 연계 생활SOC 확충','침수 취약지역 환경개선 추진']},
-  {cat:'선부1동',icon:'🔧',color:'#8E44AD',items:[
-    '노후 주택가 공영주차장 확충 추진','통학로 LED 조명 및 CCTV 확대','생활체육시설 및 주민쉼터 개선','골목길 재포장 및 보행환경 정비']},
-  {cat:'선부2동',icon:'🏫',color:'#0F6E56',items:[
-    '학교 주변 안전통학로 개선','공원 및 산책로 환경정비 확대','스마트 버스정류장 설치 추진','주민편의 생활SOC 확대']}
+  {cat:'신길동',icon:'🏭',color:'#1B3A5C',items:['신길산단 연계 교통체계 개선','출퇴근 정체구간 도로 개선 추진','청년 일자리 연계사업 확대','산업단지 주변 생활환경 개선']},
+  {cat:'원곡동',icon:'🌏',color:'#2E75B6',items:['다문화가족 지원센터 기능 확대','외국인 밀집지역 안전환경 개선','다국어 생활안내 시스템 구축','글로벌 상권 활성화 지원','다문화 청소년 교육지원 확대']},
+  {cat:'백운동',icon:'🏘️',color:'#D35400',items:['노후 골목환경 정비 추진','CCTV 및 안심조명 확대','도시재생 연계 생활SOC 확충','침수 취약지역 환경개선 추진']},
+  {cat:'선부1동',icon:'🔧',color:'#8E44AD',items:['노후 주택가 공영주차장 확충 추진','통학로 LED 조명 및 CCTV 확대','생활체육시설 및 주민쉼터 개선','골목길 재포장 및 보행환경 정비']},
+  {cat:'선부2동',icon:'🏫',color:'#0F6E56',items:['학교 주변 안전통학로 개선','공원 및 산책로 환경정비 확대','스마트 버스정류장 설치 추진','주민편의 생활SOC 확대']}
 ];
 
-/* ===== DEFAULT DATA ===== */
 const DEFAULT={
 activities:[
   {id:'a1',year:1,cat:'bill',title:'다문화 관광자원 육성 및 지원 조례',date:'2026.11월 제394회 정례회',status:0,body:'다문화 특화 관광자원 발굴·육성, 관광특구 지정 근거, 다국어 관광 안내 인프라, 경기관광공사·시군 협력체계\n연계: 경기 로컬관광(21억), 대표 지역축제(35억), 경기컬처패스(25억)',details:'안산 다문화마을특구 현황 및 관광자원 실태조사|타 시도 다문화 관광 관련 조례 비교분석|안산 다문화 주민·단체 간담회 개최 (10월)|경기관광공사·안산시 협의 (10월)|입법조사처 조례안 검토 의뢰 (10월 중순)'},
@@ -247,26 +218,14 @@ activities:[
 ],
 pledges:[
   {id:'p1',title:'대부도·시화호 관광특구 지정',status:0,link:'관광산업과 관광자원 개발사업(50개 세부사업) 및 관광특구 제도 활용',tasks:[
-    {text:'경기관광공사·안산시 협력 관광특구 지정 타당성 조사',status:0},
-    {text:'대부도 해양레저·갯벌체험·웰니스 관광자원 체계화',status:0},
-    {text:'경기둘레길 갯길 권역(안산 구간) 활성화 연계',status:0},
-    {text:'무장애 관광지 공간환경 개선사업 대부도 포함',status:0}]},
+    {text:'경기관광공사·안산시 협력 관광특구 지정 타당성 조사',status:0},{text:'대부도 해양레저·갯벌체험·웰니스 관광자원 체계화',status:0},{text:'경기둘레길 갯길 권역(안산 구간) 활성화 연계',status:0},{text:'무장애 관광지 공간환경 개선사업 대부도 포함',status:0}]},
   {id:'p2',title:'다문화 관광·축제 활성화',status:0,link:'로컬관광 지원(21억), 지역축제 지원, 국제관광 사업 연계',tasks:[
-    {text:'다문화 관광자원 조례 제정으로 법적 기반 마련',status:0},
-    {text:'안산 다문화축제 → 경기대표관광축제 승격 추진',status:0},
-    {text:'다문화마을 내 문화공간 재생사업 유치',status:0},
-    {text:'외국인 관광객 유치 시 안산 다문화마을 코스 포함',status:0}]},
+    {text:'다문화 관광자원 조례 제정으로 법적 기반 마련',status:0},{text:'안산 다문화축제 → 경기대표관광축제 승격 추진',status:0},{text:'다문화마을 내 문화공간 재생사업 유치',status:0},{text:'외국인 관광객 유치 시 안산 다문화마을 코스 포함',status:0}]},
   {id:'p3',title:'지역 체육·문화 인프라 확충',status:0,link:'공공체육시설 조성(1,515억), 국민체육센터 건립, 문예회관 지원',tasks:[
-    {text:'안산 공공체육시설 신규 조성 및 노후시설 개보수',status:0},
-    {text:'국민체육센터 안산 추가 건립 (장애인밀착형/시니어친화형)',status:0},
-    {text:'안산 국제거리극축제 지원 확대 및 상설 공연장',status:0},
-    {text:'2027 전국체전 경기장 주민 활용 방안',status:0}]},
+    {text:'안산 공공체육시설 신규 조성 및 노후시설 개보수',status:0},{text:'국민체육센터 안산 추가 건립 (장애인밀착형/시니어친화형)',status:0},{text:'안산 국제거리극축제 지원 확대 및 상설 공연장',status:0},{text:'2027 전국체전 경기장 주민 활용 방안',status:0}]},
   {id:'p4',title:'다문화가정 문화향유 확대',status:0,link:'통합문화이용권(778억), 청년패스, 아동·청소년 예술교육',tasks:[
-    {text:'통합문화이용권 다문화가정 접근성 강화 (다국어 안내)',status:0},
-    {text:'아동·청소년 예술기회 지원(50개소) 안산 다문화 아동 특화',status:0},
-    {text:'경기아트센터 아동 예술교육 45개소에 다문화 지역아동센터 우선 포함',status:0}]},
+    {text:'통합문화이용권 다문화가정 접근성 강화 (다국어 안내)',status:0},{text:'아동·청소년 예술기회 지원(50개소) 안산 다문화 아동 특화',status:0},{text:'경기아트센터 아동 예술교육 45개소에 다문화 지역아동센터 우선 포함',status:0}]},
 ],
-/* 선거공약 상태 (분야별 20개 + 동네별 21개 = 41개, 각각 별도 관리) */
 elecField:Array(20).fill(0),
 elecArea:Array(21).fill(0),
 schedule:[
@@ -304,7 +263,21 @@ function loadData(){
   catch(e){data=JSON.parse(JSON.stringify(DEFAULT))}
   if(!data.elecField) data.elecField=Array(20).fill(0);
   if(!data.elecArea) data.elecArea=Array(21).fill(0);
-  /* migrate old body string → tasks array */
+  /* migrate activities body/details → tasks/preps */
+  data.activities.forEach(a=>{
+    if(typeof a.body==='string'){
+      const sep=a.body.includes('|')?'|':'\n';
+      a.tasks=a.body.split(sep).filter(s=>s.trim()).map(t=>({text:t.trim(),status:0}));
+      delete a.body;
+    }
+    if(!a.tasks) a.tasks=[];
+    if(typeof a.details==='string'){
+      a.preps=a.details.split('|').filter(s=>s.trim()).map(t=>({text:t.trim(),status:0}));
+      delete a.details;
+    }
+    if(!a.preps) a.preps=[];
+  });
+  /* migrate pledges body → tasks */
   data.pledges.forEach(pl=>{
     if(typeof pl.body==='string'){pl.tasks=pl.body.split('|').filter(Boolean).map(t=>({text:t,status:0}));delete pl.body}
     if(!pl.tasks) pl.tasks=[];
@@ -312,82 +285,70 @@ function loadData(){
 }
 function saveData(){localStorage.setItem(STORAGE,JSON.stringify(data))}
 function resetAll(){if(confirm('모든 편집 내용을 초기 상태로 되돌리시겠습니까?')){localStorage.removeItem(STORAGE);loadData();renderAll()}}
-
-let nextId=1000;
-function genId(){return 'n'+(nextId++)}
-
-/* ===== TAB / EDIT MODE ===== */
+let nextId=1000;function genId(){return 'n'+(nextId++)}
 function showTab(n){document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===n));document.querySelectorAll('.panel').forEach((p,i)=>p.classList.toggle('active',i===n))}
 function toggleEditMode(){editMode=document.getElementById('editToggle').checked;document.body.classList.toggle('edit-mode',editMode);renderAll()}
-
-/* ===== STATUS TOGGLE ===== */
 function cycleStatus(arr,idx){arr[idx].status=(arr[idx].status+1)%3;saveData();renderAll()}
-function cycleElec(type,idx){
-  if(type==='field'){data.elecField[idx]=(data.elecField[idx]+1)%3}
-  else{data.elecArea[idx]=(data.elecArea[idx]+1)%3}
-  saveData();renderAll();
-}
+function cycleElec(type,idx){if(type==='field'){data.elecField[idx]=(data.elecField[idx]+1)%3}else{data.elecArea[idx]=(data.elecArea[idx]+1)%3};saveData();renderAll()}
 
-/* ===== DRAG & DROP (cards) ===== */
+/* activity task functions */
+function cycleActTask(ai,ti){data.activities[ai].tasks[ti].status=(data.activities[ai].tasks[ti].status+1)%3;saveData();renderAll()}
+function addActTask(ai){data.activities[ai].tasks.push({text:'새 할일',status:0});saveData();renderActivities()}
+function deleteActTask(ai,ti){if(confirm('삭제하시겠습니까?')){data.activities[ai].tasks.splice(ti,1);saveData();renderActivities()}}
+function cycleActPrep(ai,ti){data.activities[ai].preps[ti].status=(data.activities[ai].preps[ti].status+1)%3;saveData();renderAll()}
+function addActPrep(ai){data.activities[ai].preps.push({text:'새 준비사항',status:0});saveData();renderActivities()}
+function deleteActPrep(ai,ti){if(confirm('삭제하시겠습니까?')){data.activities[ai].preps.splice(ti,1);saveData();renderActivities()}}
+
+/* pledge task functions */
+function cyclePledgeTask(pi,ti){data.pledges[pi].tasks[ti].status=(data.pledges[pi].tasks[ti].status+1)%3;saveData();renderAll()}
+function addPledgeTask(pi){data.pledges[pi].tasks.push({text:'새 할일',status:0});saveData();renderPledges()}
+function deletePledgeTask(pi,ti){if(confirm('삭제하시겠습니까?')){data.pledges[pi].tasks.splice(ti,1);saveData();renderPledges()}}
+
+/* drag & drop */
 let dragSrc=null,dragArr=null;
 function dragStart(e,arr,idx){dragSrc=idx;dragArr=arr;e.target.closest('.card').classList.add('dragging')}
-function dragEnd(e){document.querySelectorAll('.card').forEach(c=>{c.classList.remove('dragging','drag-over')})}
+function dragEnd(e){document.querySelectorAll('.card').forEach(c=>c.classList.remove('dragging','drag-over'))}
 function dragOver(e){e.preventDefault();e.target.closest('.card')?.classList.add('drag-over')}
 function dragLeave(e){e.target.closest('.card')?.classList.remove('drag-over')}
 function drop(e,arr,idx){e.preventDefault();if(dragArr!==arr||dragSrc===idx)return;const item=arr.splice(dragSrc,1)[0];arr.splice(idx,0,item);saveData();renderAll()}
-
-/* ===== DRAG & DROP (table rows) ===== */
 let dragRowSrc=null;
 function rowDragStart(e,idx){dragRowSrc=idx;e.target.closest('tr').style.opacity='.4'}
 function rowDragEnd(e){e.target.closest('tr').style.opacity='1'}
 function rowDragOver(e){e.preventDefault()}
 function rowDrop(e,idx){e.preventDefault();if(dragRowSrc===null||dragRowSrc===idx)return;const item=data.schedule.splice(dragRowSrc,1)[0];data.schedule.splice(idx,0,item);dragRowSrc=null;saveData();renderAll()}
-
-/* ===== INLINE EDIT ===== */
-function makeEditable(text,onSave){const el=document.createElement('span');el.textContent=text;if(editMode){el.contentEditable='true';el.addEventListener('blur',()=>{onSave(el.textContent.trim());saveData()})}return el}
-
-/* ===== DELETE ===== */
-function deleteItem(arr,idx){if(confirm('이 항목을 삭제하시겠습니까?')){arr.splice(idx,1);saveData();renderAll()}}
-
-/* ===== ADD ===== */
-function addActivity(year){data.activities.push({id:genId(),year,cat:'etc',title:'새 항목',date:'시기 입력',status:0,body:'내용 입력'});saveData();renderAll();showTab(1)}
+function deleteItem(arr,idx){if(confirm('삭제하시겠습니까?')){arr.splice(idx,1);saveData();renderAll()}}
+function addActivity(year){data.activities.push({id:genId(),year,cat:'etc',title:'새 항목',date:'시기 입력',status:0,tasks:[{text:'할 일 입력',status:0}],preps:[]});saveData();renderAll();showTab(1)}
 function addPledge(){data.pledges.push({id:genId(),title:'새 공약',status:0,link:'연계 사업 입력',tasks:[{text:'할 일 입력',status:0}]});saveData();renderAll();showTab(2)}
-function cyclePledgeTask(pi,ti){data.pledges[pi].tasks[ti].status=(data.pledges[pi].tasks[ti].status+1)%3;saveData();renderAll()}
-function addPledgeTask(pi){data.pledges[pi].tasks.push({text:'새 할일',status:0});saveData();renderPledges()}
-function deletePledgeTask(pi,ti){if(confirm('이 할일을 삭제하시겠습니까?')){data.pledges[pi].tasks.splice(ti,1);saveData();renderPledges()}}
 function addSchedule(){data.schedule.push({id:genId(),date:'시기',session:'회기',cat:'구분',text:'내용 입력',status:0});saveData();renderAll();showTab(3)}
-
-/* ===== RENDER HELPERS ===== */
-function bulletHTML(text){if(!text)return '';const items=text.split('|').filter(Boolean);return '<ul class="bl">'+items.map(i=>'<li>'+escHtml(i)+'</li>').join('')+'</ul>'}
 function escHtml(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
 
-/* ===== ELECTION PLEDGE STATS ===== */
-function elecStats(){
-  let fd=0,ft=0; data.elecField.forEach(s=>{ft++;if(s===2)fd++});
-  let ad=0,at=0; data.elecArea.forEach(s=>{at++;if(s===2)ad++});
-  return {fd,ft,ad,at,td:fd+ad,tt:ft+at};
+function renderTaskItems(tasks,cycFn,delFn,addFn,idx){
+  let h='';
+  tasks.forEach((t,ti)=>{
+    const st=t.status,stIcon=st===2?'✓':st===1?'●':'';
+    h+=`<div class="acc-item"><div class="acc-st s${st}" onclick="${cycFn}(${idx},${ti})" title="상태 변경">${stIcon}</div><span style="${st===2?'text-decoration:line-through;color:var(--gr)':''}" ${editMode?'contenteditable="true" onblur="'+cycFn.replace('cycle','').replace('ActTask','').length?'data.activities['+idx+'].tasks['+ti+'].text=this.textContent.trim();saveData()':'data.activities['+idx+'].preps['+ti+'].text=this.textContent.trim();saveData()'+'"':''}>${escHtml(t.text)}</span>${editMode?'<span class="small-del" style="display:inline-block" onclick="'+delFn+'('+idx+','+ti+')">✕</span>':''}</div>`;
+  });
+  if(editMode) h+=`<div style="text-align:center;margin-top:4px"><button class="small-add" style="display:inline-block" onclick="${addFn}(${idx})">＋ 추가</button></div>`;
+  return h;
 }
 
-/* ===== RENDER: DASHBOARD ===== */
+function elecStats(){let fd=0,ft=0;data.elecField.forEach(s=>{ft++;if(s===2)fd++});let ad=0,at=0;data.elecArea.forEach(s=>{at++;if(s===2)ad++});return{fd,ft,ad,at,td:fd+ad,tt:ft+at}}
+
 function renderDashboard(){
   const p=document.getElementById('panel-0');
-  const count=(arr,catPrefix)=>{let d=0,t=0;arr.forEach(i=>{if(typeof catPrefix==='function'?catPrefix(i):true){t++;if(i.status===2)d++}});return{d,t}};
-  const bills=count(data.activities,i=>i.cat==='bill');
-  const amends=count(data.activities,i=>i.cat==='amend');
-  const speeches=count(data.activities,i=>i.cat==='speech');
-  const queries=count(data.activities,i=>i.cat==='query');
+  /* activity task-level stats */
+  const actStats=(()=>{let d=0,t=0;data.activities.forEach(a=>{(a.tasks||[]).forEach(tk=>{t++;if(tk.status===2)d++});(a.preps||[]).forEach(tk=>{t++;if(tk.status===2)d++})});return{d,t}})();
+  const actPct=actStats.t?Math.round(actStats.d/actStats.t*100):0;
+  /* pledge task-level stats */
   const keyPledges=(()=>{let d=0,t=0;data.pledges.forEach(p=>(p.tasks||[]).forEach(tk=>{t++;if(tk.status===2)d++}));return{d,t}})();
-  const totalD=bills.d+amends.d+speeches.d+queries.d;
-  const totalT=bills.t+amends.t+speeches.t+queries.t;
-  const pct=totalT?Math.round(totalD/totalT*100):0;
   const kpct=keyPledges.t?Math.round(keyPledges.d/keyPledges.t*100):0;
-
-  const es=elecStats();
-  const epct=es.tt?Math.round(es.td/es.tt*100):0;
-
+  /* election pledge stats */
+  const es=elecStats();const epct=es.tt?Math.round(es.td/es.tt*100):0;
+  /* per-category counts */
+  const catCount=(cat)=>{let d=0,t=0;data.activities.filter(a=>a.cat===cat).forEach(a=>{(a.tasks||[]).forEach(tk=>{t++;if(tk.status===2)d++})});return{d,t}};
+  const bills=catCount('bill'),amends=catCount('amend'),speeches=catCount('speech'),queries=catCount('query');
   const upcoming=data.activities.filter(a=>a.status<2).slice(0,1);
   const nextText=upcoming.length?'<strong>'+escHtml(upcoming[0].date)+'</strong> — '+escHtml(upcoming[0].title):'모든 활동 완료!';
-
   p.innerHTML=`
     <div class="next-alert"><span style="font-size:20px">🔔</span><div class="text">다음 예정: ${nextText}</div></div>
     <div class="metric-row">
@@ -396,36 +357,38 @@ function renderDashboard(){
       <div class="metric"><div class="metric-label">5분발언</div><div class="metric-val">${speeches.d} <span>/ ${speeches.t}</span></div></div>
       <div class="metric"><div class="metric-label">대집행부질의</div><div class="metric-val">${queries.d} <span>/ ${queries.t}</span></div></div>
     </div>
-    <div class="card"><div class="card-title">📈 전체 의정활동 진행률</div><div class="card-body"><div class="prog-bar"><div class="prog-fill" style="width:${pct}%"></div></div><div class="prog-text">전체 ${totalT}개 항목 중 ${totalD}개 완료 (${pct}%)</div></div></div>
+    <div class="card"><div class="card-title">🏛️ 의정활동 진행률</div><div class="card-body"><div class="prog-bar"><div class="prog-fill" style="width:${actPct}%;background:var(--sec)"></div></div><div class="prog-text">전체 ${actStats.t}개 할일 중 ${actStats.d}개 완료 (${actPct}%)</div></div></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
       <div class="card"><div class="card-title">📋 일반공약 이행률</div><div class="card-body"><div class="prog-bar"><div class="prog-fill" style="width:${epct}%;background:var(--acc)"></div></div><div class="prog-text">${es.tt}개 선거공약 중 ${es.td}개 완료 (${epct}%)</div></div></div>
-      <div class="card"><div class="card-title">⭐ 핵심공약 이행률</div><div class="card-body"><div class="prog-bar"><div class="prog-fill" style="width:${kpct}%;background:var(--green)"></div></div><div class="prog-text">${keyPledges.t}개 핵심공약 중 ${keyPledges.d}개 완료 (${kpct}%)</div></div></div>
+      <div class="card"><div class="card-title">⭐ 핵심공약 이행률</div><div class="card-body"><div class="prog-bar"><div class="prog-fill" style="width:${kpct}%;background:var(--green)"></div></div><div class="prog-text">${keyPledges.t}개 핵심과제 중 ${keyPledges.d}개 완료 (${kpct}%)</div></div></div>
     </div>
     <div class="section-title">📌 주요 예정 활동</div>
-    ${data.activities.filter(a=>a.status<2).slice(0,8).map(a=>`<div class="card" style="padding:12px 20px"><div style="display:flex;align-items:center;justify-content:space-between"><div><span style="font-size:12px;color:var(--sec);font-weight:600">${escHtml(a.date)}</span> <span style="font-size:13px;color:#444;margin-left:8px">${escHtml(a.title)}</span></div><span class="badge ${statusClass[a.status]}" style="cursor:default;font-size:10px">${statusCycle[a.status]}</span></div></div>`).join('')}
-  `;
+    ${data.activities.filter(a=>a.status<2).slice(0,8).map(a=>{const td=(a.tasks||[]).length,dd=(a.tasks||[]).filter(t=>t.status===2).length;return`<div class="card" style="padding:12px 20px"><div style="display:flex;align-items:center;justify-content:space-between"><div><span style="font-size:12px;color:var(--sec);font-weight:600">${escHtml(a.date)}</span> <span style="font-size:13px;color:#444;margin-left:8px">${escHtml(a.title)}</span></div><div style="display:flex;align-items:center;gap:8px"><span style="font-size:11px;color:var(--gr)">${dd}/${td}</span><span class="badge ${statusClass[a.status]}" style="cursor:default;font-size:10px">${statusCycle[a.status]}</span></div></div></div>`}).join('')}`;
 }
 
-/* ===== RENDER: ACTIVITIES ===== */
 function renderActivities(){
-  const p=document.getElementById('panel-1');
-  let html='';
+  const p=document.getElementById('panel-1');let html='';
   [1,2].forEach(yr=>{
     html+=`<div class="section-title">${yr===1?'📘':'📙'} ${yr}차년도 (${yr===1?'2026.7 ~ 2027.6':'2027.7 ~ 2028.6'})</div>`;
     const items=data.activities.filter(a=>a.year===yr);
     const cats=[...new Set(items.map(a=>a.cat))];
     cats.forEach(cat=>{
       html+=`<div class="sub-title">${catLabels[cat]||cat}</div>`;
-      items.filter(a=>a.cat===cat).forEach((a,ci)=>{
-        const gIdx=data.activities.indexOf(a);
-        const bodyLines=a.body?(a.body.includes('|')?bulletHTML(a.body):'<p>'+escHtml(a.body).replace(/\n/g,'<br>')+'</p>'):'';
-        const detailsHtml=a.details?'<details style="margin-top:8px"><summary style="font-size:12px;color:var(--sec);cursor:pointer;font-weight:500">준비사항 상세</summary>'+bulletHTML(a.details)+'</details>':'';
-        html+=`<div class="card" draggable="${editMode}" ondragstart="dragStart(event,data.activities,${gIdx})" ondragend="dragEnd(event)" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="drop(event,data.activities,${gIdx})">
-          <span class="grip" draggable="false">⠿</span>
-          <button class="del-btn" onclick="deleteItem(data.activities,${gIdx})">✕</button>
-          <div class="card-title"><span class="badge ${statusClass[a.status]}" onclick="cycleStatus(data.activities,${gIdx})">${statusCycle[a.status]}</span> <span ${editMode?'contenteditable="true" onblur="data.activities['+gIdx+'].title=this.textContent.trim();saveData()"':''}>${escHtml(a.title)}</span></div>
-          <div class="card-body"><strong>시기:</strong> <span ${editMode?'contenteditable="true" onblur="data.activities['+gIdx+'].date=this.textContent.trim();saveData()"':''}>${escHtml(a.date)}</span><br>${bodyLines}${detailsHtml}</div>
-        </div>`;
+      items.filter(a=>a.cat===cat).forEach(a=>{
+        const gi=data.activities.indexOf(a);
+        const tasksDone=(a.tasks||[]).filter(t=>t.status===2).length;
+        const tasksTotal=(a.tasks||[]).length;
+        const prepsDone=(a.preps||[]).filter(t=>t.status===2).length;
+        const prepsTotal=(a.preps||[]).length;
+        html+=`<div class="card" draggable="${editMode}" ondragstart="dragStart(event,data.activities,${gi})" ondragend="dragEnd(event)" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="drop(event,data.activities,${gi})">
+          <span class="grip" draggable="false">⠿</span><button class="del-btn" onclick="deleteItem(data.activities,${gi})">✕</button>
+          <div class="card-title"><span class="badge ${statusClass[a.status]}" onclick="cycleStatus(data.activities,${gi})">${statusCycle[a.status]}</span> <span ${editMode?'contenteditable="true" onblur="data.activities['+gi+'].title=this.textContent.trim();saveData()"':''}>${escHtml(a.title)}</span> <span style="font-size:11px;color:var(--gr);font-weight:400">(${tasksDone}/${tasksTotal})</span></div>
+          <div class="card-body"><strong>시기:</strong> <span ${editMode?'contenteditable="true" onblur="data.activities['+gi+'].date=this.textContent.trim();saveData()"':''}>${escHtml(a.date)}</span>
+          <div style="margin-top:8px">${(a.tasks||[]).map((t,ti)=>{const st=t.status,stI=st===2?'✓':st===1?'●':'';return`<div class="acc-item"><div class="acc-st s${st}" onclick="cycleActTask(${gi},${ti})" title="상태 변경">${stI}</div><span style="${st===2?'text-decoration:line-through;color:var(--gr)':''}" ${editMode?'contenteditable="true" onblur="data.activities['+gi+'].tasks['+ti+'].text=this.textContent.trim();saveData()"':''}>${escHtml(t.text)}</span>${editMode?'<span class="small-del" style="display:inline-block" onclick="deleteActTask('+gi+','+ti+')">✕</span>':''}</div>`}).join('')}
+          ${editMode?'<div style="text-align:center;margin-top:4px"><button class="small-add" style="display:inline-block" onclick="addActTask('+gi+')">＋ 할일 추가</button></div>':''}
+          </div>
+          ${prepsTotal>0||editMode?`<details style="margin-top:8px"><summary style="font-size:12px;color:var(--sec);cursor:pointer;font-weight:500">준비사항 (${prepsDone}/${prepsTotal})</summary>${(a.preps||[]).map((t,ti)=>{const st=t.status,stI=st===2?'✓':st===1?'●':'';return`<div class="acc-item"><div class="acc-st s${st}" onclick="cycleActPrep(${gi},${ti})" title="상태 변경">${stI}</div><span style="${st===2?'text-decoration:line-through;color:var(--gr)':''}" ${editMode?'contenteditable="true" onblur="data.activities['+gi+'].preps['+ti+'].text=this.textContent.trim();saveData()"':''}>${escHtml(t.text)}</span>${editMode?'<span class="small-del" style="display:inline-block" onclick="deleteActPrep('+gi+','+ti+')">✕</span>':''}</div>`}).join('')}${editMode?'<div style="text-align:center;margin-top:4px"><button class="small-add" style="display:inline-block" onclick="addActPrep('+gi+')">＋ 준비사항 추가</button></div>':''}</details>`:''}
+          </div></div>`;
       });
     });
     html+=`<button class="add-btn" onclick="addActivity(${yr})">＋ ${yr}차년도 항목 추가</button>`;
@@ -433,115 +396,53 @@ function renderActivities(){
   p.innerHTML=html;
 }
 
-/* ===== RENDER: PLEDGES (개편) ===== */
 let openAccIdx={};
 function toggleAcc(key){openAccIdx[key]=!openAccIdx[key];renderPledges()}
-
 function renderElecAccordion(groups,stateArr,type){
   let html='',gi=0;
-  groups.forEach(g=>{
-    const startIdx=gi;
-    const done=g.items.reduce((s,_,i)=>s+(stateArr[startIdx+i]===2?1:0),0);
-    const prog=g.items.reduce((s,_,i)=>s+(stateArr[startIdx+i]===1?1:0),0);
-    const total=g.items.length;
-    const key=type+'_'+g.cat;
-    const isOpen=openAccIdx[key];
-    const ratioStyle=done===total?'background:var(--green-bg);color:var(--green)':prog>0?'background:var(--amber-bg);color:var(--amber)':'background:var(--lbg);color:var(--acc)';
-
-    html+=`<div class="acc-group ${isOpen?'open':''}">
-      <div class="acc-header" onclick="toggleAcc('${key}')">
-        <div class="acc-left">
-          <span class="acc-icon">${g.icon}</span>
-          <span class="acc-name">${escHtml(g.cat)}</span>
-          <span class="acc-cnt">${total}개</span>
-        </div>
-        <div class="acc-right">
-          <span class="acc-ratio" style="${ratioStyle}">${done}/${total}</span>
-          <span class="acc-arrow">▼</span>
-        </div>
-      </div>
-      <div class="acc-body">`;
-
-    g.items.forEach((item,i)=>{
-      const idx=startIdx+i;
-      const st=stateArr[idx];
-      const stIcon=st===2?'✓':st===1?'●':'';
-      html+=`<div class="acc-item">
-        <div class="acc-st s${st}" onclick="cycleElec('${type}',${idx})" title="클릭하여 상태 변경">${stIcon}</div>
-        <span style="${st===2?'text-decoration:line-through;color:var(--gr)':''}">${escHtml(item)}</span>
-      </div>`;
+  groups.forEach(g=>{const si=gi;const done=g.items.reduce((s,_,i)=>s+(stateArr[si+i]===2?1:0),0);const prog=g.items.reduce((s,_,i)=>s+(stateArr[si+i]===1?1:0),0);const total=g.items.length;const key=type+'_'+g.cat;const isOpen=openAccIdx[key];
+    const rs=done===total?'background:var(--green-bg);color:var(--green)':prog>0?'background:var(--amber-bg);color:var(--amber)':'background:var(--lbg);color:var(--acc)';
+    html+=`<div class="acc-group ${isOpen?'open':''}"><div class="acc-header" onclick="toggleAcc('${key}')"><div class="acc-left"><span class="acc-icon">${g.icon}</span><span class="acc-name">${escHtml(g.cat)}</span><span class="acc-cnt">${total}개</span></div><div class="acc-right"><span class="acc-ratio" style="${rs}">${done}/${total}</span><span class="acc-arrow">▼</span></div></div><div class="acc-body">`;
+    g.items.forEach((item,i)=>{const idx=si+i;const st=stateArr[idx];const stI=st===2?'✓':st===1?'●':'';
+      html+=`<div class="acc-item"><div class="acc-st s${st}" onclick="cycleElec('${type}',${idx})" title="상태 변경">${stI}</div><span style="${st===2?'text-decoration:line-through;color:var(--gr)':''}">${escHtml(item)}</span></div>`;
     });
-    html+=`</div></div>`;
-    gi+=g.items.length;
-  });
-  return html;
+    html+=`</div></div>`;gi+=g.items.length;
+  });return html;
 }
 
 function renderPledges(){
-  const p=document.getElementById('panel-2');
-  let html='<div class="pledge-layout">';
-
-  /* 왼쪽: 선거 공약 전체 */
-  html+='<div>';
+  const p=document.getElementById('panel-2');let html='<div class="pledge-layout"><div>';
   html+='<div class="section-title" style="margin-top:0">📋 선거 공약 이행현황</div>';
-  html+=`<div class="pledge-view-toggle">
-    <div class="pledge-view-btn ${pledgeView==='field'?'active':''}" onclick="pledgeView='field';renderPledges()">분야별 보기</div>
-    <div class="pledge-view-btn ${pledgeView==='area'?'active':''}" onclick="pledgeView='area';renderPledges()">동네별 보기</div>
-  </div>`;
-
-  if(pledgeView==='field'){
-    html+=renderElecAccordion(ELECTION_FIELD,data.elecField,'field');
-  } else {
-    html+=renderElecAccordion(ELECTION_AREA,data.elecArea,'area');
-  }
-  html+='</div>';
-
-  /* 오른쪽: 핵심 공약 */
-  html+='<div>';
+  html+=`<div class="pledge-view-toggle"><div class="pledge-view-btn ${pledgeView==='field'?'active':''}" onclick="pledgeView='field';renderPledges()">분야별 보기</div><div class="pledge-view-btn ${pledgeView==='area'?'active':''}" onclick="pledgeView='area';renderPledges()">동네별 보기</div></div>`;
+  html+=pledgeView==='field'?renderElecAccordion(ELECTION_FIELD,data.elecField,'field'):renderElecAccordion(ELECTION_AREA,data.elecArea,'area');
+  html+='</div><div>';
   html+='<div class="section-title" style="margin-top:0">⭐ 핵심공약 이행현황</div>';
   data.pledges.forEach((pl,i)=>{
     html+=`<div class="card" draggable="${editMode}" ondragstart="dragStart(event,data.pledges,${i})" ondragend="dragEnd(event)" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="drop(event,data.pledges,${i})">
-      <span class="grip" draggable="false">⠿</span>
-      <button class="del-btn" onclick="deleteItem(data.pledges,${i})">✕</button>
+      <span class="grip" draggable="false">⠿</span><button class="del-btn" onclick="deleteItem(data.pledges,${i})">✕</button>
       <div class="card-title"><span class="badge ${statusClass[pl.status]}" onclick="cycleStatus(data.pledges,${i})">${statusCycle[pl.status]}</span> <span ${editMode?'contenteditable="true" onblur="data.pledges['+i+'].title=this.textContent.trim();saveData()"':''}>${escHtml(pl.title)}</span></div>
       <div class="card-body"><strong>▶ 문체위 연계:</strong> <span ${editMode?'contenteditable="true" onblur="data.pledges['+i+'].link=this.textContent.trim();saveData()"':''}>${escHtml(pl.link)}</span>
-        <div style="margin-top:8px">
-        ${(pl.tasks||[]).map((t,ti)=>{
-          const st=t.status;const stIcon=st===2?'✓':st===1?'●':'';
-          return `<div class="acc-item">
-            <div class="acc-st s${st}" onclick="cyclePledgeTask(${i},${ti})" title="클릭하여 상태 변경">${stIcon}</div>
-            <span style="${st===2?'text-decoration:line-through;color:var(--gr)':''}" ${editMode?'contenteditable="true" onblur="data.pledges['+i+'].tasks['+ti+'].text=this.textContent.trim();saveData()"':''}>${escHtml(t.text)}</span>
-            ${editMode?'<span style="margin-left:auto;color:var(--red);cursor:pointer;font-size:12px;flex-shrink:0" onclick="deletePledgeTask('+i+','+ti+')">✕</span>':''}
-          </div>`}).join('')}
-        ${editMode?'<div style="text-align:center;margin-top:4px"><button style="background:transparent;border:1px dashed var(--acc);color:var(--acc);padding:4px 12px;border-radius:6px;cursor:pointer;font-size:12px" onclick="addPledgeTask('+i+')">＋ 할일 추가</button></div>':''}
-        </div>
-      </div>
-    </div>`;
+        <div style="margin-top:8px">${(pl.tasks||[]).map((t,ti)=>{const st=t.status,stI=st===2?'✓':st===1?'●':'';return`<div class="acc-item"><div class="acc-st s${st}" onclick="cyclePledgeTask(${i},${ti})" title="상태 변경">${stI}</div><span style="${st===2?'text-decoration:line-through;color:var(--gr)':''}" ${editMode?'contenteditable="true" onblur="data.pledges['+i+'].tasks['+ti+'].text=this.textContent.trim();saveData()"':''}>${escHtml(t.text)}</span>${editMode?'<span class="small-del" style="display:inline-block" onclick="deletePledgeTask('+i+','+ti+')">✕</span>':''}</div>`}).join('')}
+        ${editMode?'<div style="text-align:center;margin-top:4px"><button class="small-add" style="display:inline-block" onclick="addPledgeTask('+i+')">＋ 할일 추가</button></div>':''}
+        </div></div></div>`;
   });
-  html+='<button class="add-btn" onclick="addPledge()">＋ 핵심공약 추가</button>';
-  html+='</div>';
-
-  html+='</div>';
+  html+='<button class="add-btn" onclick="addPledge()">＋ 핵심공약 추가</button></div></div>';
   p.innerHTML=html;
 }
 
-/* ===== CALENDAR ===== */
 let calYear=2026,calMonth=7;
 function parseSchedDate(d){if(!d)return null;const pp=d.replace(/[년월일]/g,'.').replace(/\s/g,'').split('.').filter(Boolean).map(Number);if(pp.length>=2&&pp[0]>2000)return{y:pp[0],m:pp[1],d:pp[2]||null};return null}
 function calPrev(){calMonth--;if(calMonth<1){calMonth=12;calYear--}renderSchedule()}
 function calNext(){calMonth++;if(calMonth>12){calMonth=1;calYear++}renderSchedule()}
 function ymd(y,m,d){return y*10000+m*100+d}
-
 const SESS=[[20260707,20260723],[20260901,20260918],[20261103,20261217]];
 const OVERLAY=[
   [20260707,20260707,'본회의(개원·의장선거)','ple',1],[20260714,20260714,'본회의(업무보고)','ple',1],[20260716,20260716,'본회의(상임위선임)','ple',1],[20260720,20260722,'상임위 활동','com',1],[20260723,20260723,'본회의(안건심의)','ple',1],
   [20260901,20260901,'본회의(개회)','ple',1],[20260902,20260903,'대집행부질문','ple',1],[20260904,20260910,'상임위 활동','com',1],[20260911,20260917,'예결위 활동','bud',1],[20260918,20260918,'본회의(안건심의)','ple',1],
   [20261103,20261103,'본회의(개회)','ple',1],[20261104,20261105,'대집행부질문','ple',1],[20261106,20261119,'행정사무감사','aud',1],[20261120,20261125,'상임위(예산·조례)','com',1],[20261126,20261126,'본회의(조례심의)','ple',1],[20261127,20261210,'예결위(예산심사)','bud',1],[20261211,20261211,'본회의(예산심의)','ple',1],[20261214,20261216,'상임위(조례)','com',1],[20261217,20261217,'본회의(감사보고)','ple',1],
   [20260717,20260717,'제헌절','hol',0],[20260924,20260926,'추석 연휴','hol',0],[20261119,20261119,'대학수능','hol',0],
-  [20260812,20260831,'5분발언 준비(20일)','prS',2],[20261009,20261102,'조례 준비(25일)','prB',2],[20261014,20261102,'질의 준비(20일)','prQ',2],
-  [20261017,20261105,'감사 준비(20일)','prA',2],[20261113,20261119,'예산 준비(7일)','prU',2],
+  [20260812,20260831,'5분발언 준비(20일)','prS',2],[20261009,20261102,'조례 준비(25일)','prB',2],[20261014,20261102,'질의 준비(20일)','prQ',2],[20261017,20261105,'감사 준비(20일)','prA',2],[20261113,20261119,'예산 준비(7일)','prU',2],
 ];
-
 function renderCalendar(){
   const first=new Date(calYear,calMonth-1,1);const startDow=first.getDay();const dim=new Date(calYear,calMonth,0).getDate();const prevDays=new Date(calYear,calMonth-1,0).getDate();
   const today=new Date();const tY=today.getFullYear(),tM=today.getMonth()+1,tD=today.getDate();
@@ -561,7 +462,6 @@ function renderCalendar(){
   html+='</div>';return html;
 }
 
-/* ===== RENDER: SCHEDULE ===== */
 function renderSchedule(){
   const p=document.getElementById('panel-3');let rows='';
   data.schedule.forEach((s,i)=>{if(s.cat==='__divider__'){rows+=`<tr class="divider-row"><td colspan="${editMode?'7':'5'}">${escHtml(s.text)}</td></tr>`;return}
@@ -572,14 +472,12 @@ function renderSchedule(){
       <td ${editMode?'contenteditable="true" onblur="data.schedule['+i+'].cat=this.textContent.trim();saveData()"':''}>${escHtml(s.cat)}</td>
       <td ${editMode?'contenteditable="true" onblur="data.schedule['+i+'].text=this.textContent.trim();saveData()"':''}>${escHtml(s.text)}</td>
       <td><span class="badge ${statusClass[s.status]}" onclick="cycleStatus(data.schedule,${i})">${statusCycle[s.status]}</span></td>
-      ${editMode?'<td class="del-cell" style="display:table-cell" onclick="deleteItem(data.schedule,'+i+')">🗑</td>':''}
-    </tr>`});
+      ${editMode?'<td class="del-cell" style="display:table-cell" onclick="deleteItem(data.schedule,'+i+')">🗑</td>':''}</tr>`});
   p.innerHTML=`<div class="section-title">📅 전반기 의정활동 일정표</div>${renderCalendar()}<div class="section-title" style="margin-top:32px">📋 일정 상세 목록</div>
     <table class="tbl"><thead><tr>${editMode?'<th style="width:40px"></th>':''}<th style="width:80px">시기</th><th style="width:80px">회기</th><th style="width:110px">구분</th><th>주요 내용</th><th style="width:60px">상태</th>${editMode?'<th style="width:40px"></th>':''}</tr></thead><tbody>${rows}</tbody></table>
     <button class="add-btn" onclick="addSchedule()">＋ 일정 추가</button>`;
 }
 
-/* ===== RENDER: PROFILE ===== */
 function renderProfile(){
   document.getElementById('panel-4').innerHTML=`
     <div class="section-title">👤 의원 프로필</div>
@@ -597,16 +495,14 @@ function renderProfile(){
     <div class="sub-title">주요 경력</div>
     <ul class="bl"><li>(전) 안산시의회 의원(제9대)</li><li>(전) 안산시의회 예산결산특별위원회 위원장</li><li>(전) 경기도 다문화가족지원 정책위원</li><li>(전) 안산시 외국인주민 및 다문화가족 지원 조례 제정 주도</li><li>(현) 안산 다문화마을특구 활성화 실무경험 보유</li></ul>
     <div class="section-title">🔗 문체국 주요사업 연계 분석</div>
-    <div class="card"><div class="card-title">1. 경기 로컬관광 지원 (관광산업과, 21억)</div><div class="card-body"><strong>현황:</strong> 시군 주도 로컬관광 콘텐츠 공모 6건, 민·관 네트워크 41개소<br><strong>연계점:</strong> 안산 대부도·시화호 로컬관광 콘텐츠, 다문화 음식·문화 체험형 관광상품<br><strong>개선:</strong> 다문화 특화 로컬관광 유형 신설</div></div>
+    <div class="card"><div class="card-title">1. 경기 로컬관광 지원 (관광산업과, 21억)</div><div class="card-body"><strong>현황:</strong> 시군 주도 로컬관광 콘텐츠 공모 6건, 민·관 네트워크 41개소<br><strong>연계점:</strong> 안산 대부도·시화호 로컬관광 콘텐츠, 다문화 음식·문화 체험형 관광상품</div></div>
     <div class="card"><div class="card-title">2. 대표 지역축제 지원</div><div class="card-body"><strong>현황:</strong> 문화관광축제 2개, 경기대표관광축제 9개 지원<br><strong>연계점:</strong> 안산 국제거리극축제, 다문화축제 → 경기대표관광축제 승격</div></div>
-    <div class="card"><div class="card-title">3. 웰니스·워케이션 관광 (6억)</div><div class="card-body"><strong>현황:</strong> 웰니스 관광지 20개소, 워케이션 11개소<br><strong>연계점:</strong> 대부도·시화호 해양 치유관광 → 웰니스 인증, 시화 권역 워케이션 확대</div></div>
+    <div class="card"><div class="card-title">3. 웰니스·워케이션 관광 (6억)</div><div class="card-body"><strong>현황:</strong> 웰니스 관광지 20개소, 워케이션 11개소<br><strong>연계점:</strong> 대부도·시화호 해양 치유관광 → 웰니스 인증</div></div>
     <div class="card"><div class="card-title">4. 무장애 관광지 (11억)</div><div class="card-body"><strong>현황:</strong> 7개 시군 7개소, 안산 미포함<br><strong>연계점:</strong> 대부도 관광지 무장애 환경 개선 유치</div></div>
     <div class="card"><div class="card-title">5. 문화공간 재생사업 (45.9억)</div><div class="card-body"><strong>현황:</strong> 유휴공간 문화재생 3개소, 안산 명화극장 선정<br><strong>연계점:</strong> 다문화마을 유휴공간을 문화예술 체험공간으로 재생</div></div>
-    <div class="card"><div class="card-title">6. 통합문화이용권·기회소득 (778억)</div><div class="card-body"><strong>현황:</strong> 문화누리카드 513,404명<br><strong>연계점:</strong> 다문화가정·이주여성 문화 접근성, 다국어 안내 필요</div></div>
-  `;
+    <div class="card"><div class="card-title">6. 통합문화이용권·기회소득 (778억)</div><div class="card-body"><strong>현황:</strong> 문화누리카드 513,404명<br><strong>연계점:</strong> 다문화가정·이주여성 문화 접근성, 다국어 안내 필요</div></div>`;
 }
 
-/* ===== RENDER ALL ===== */
 function renderAll(){renderDashboard();renderActivities();renderPledges();renderSchedule();renderProfile()}
 loadData();renderAll();
 </script>
