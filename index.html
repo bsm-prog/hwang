@@ -642,9 +642,9 @@ function renderProfile(){
 function renderMedia(){
   var p=document.getElementById("panel-5");
   var html='<div class="section-title">📰 보도자료 · 미디어 모니터</div>';
-  html+='<button class="media-search-btn" id="mediaSearchBtn" onclick="searchMedia()">🔍 오늘의 보도현황 조회하기</button>';
+  html+='<button class="media-search-btn" id="mediaSearchBtn" onclick="searchMedia()">🔍 오늘의 보도현황 한번에 검색하기</button>';
   html+='<div id="mediaResults" style="margin-top:16px"></div>';
-  html+='<div style="margin-top:24px"><div class="sub-title">🔗 직접 검색 링크</div><div class="media-quick-links">';
+  html+='<div style="margin-top:24px"><div class="sub-title">🔗 뉴스 검색 바로가기</div><div class="media-quick-links">';
   html+='<a class="media-qlink" href="https://www.ggc.go.kr/site/lwmkr/blog/12037/12" target="_blank">🏛️ 의회 보도자료</a>';
   html+='<a class="media-qlink" href="https://search.naver.com/search.naver?where=news&query=%ED%99%A9%EC%9D%80%ED%99%94+%EA%B2%BD%EA%B8%B0%EB%8F%84%EC%9D%98%EC%9B%90&sort=1" target="_blank">네이버 뉴스</a>';
   html+='<a class="media-qlink" href="https://www.google.com/search?q=%ED%99%A9%EC%9D%80%ED%99%94+%EA%B2%BD%EA%B8%B0%EB%8F%84%EC%9D%98%EC%9B%90&tbm=nws&tbs=sbd:1" target="_blank">구글 뉴스</a>';
@@ -657,51 +657,20 @@ function renderMedia(){
 
 async function searchMedia(){
   var btn=document.getElementById("mediaSearchBtn");
+  btn.disabled=true;btn.textContent="🔍 검색 탭 열기 중...";
+  var links=document.querySelectorAll('.media-qlink');
+  var opened=0;
+  links.forEach(function(a){
+    if(a.href.indexOf('naver.com')>=0||a.href.indexOf('google.com/search')>=0||a.href.indexOf('daum.net')>=0){
+      window.open(a.href,'_blank');opened++;
+    }
+  });
   var container=document.getElementById("mediaResults");
-  btn.disabled=true;btn.textContent="🔍 검색 중...";
-  container.innerHTML='<div class="media-loading"><div class="spinner"></div><div>보도자료를 검색하고 있습니다...</div></div>';
-  var allItems=[];
-  try{
-    var q="황은화+경기도의원";
-    var rssUrl="https://news.google.com/rss/search?q="+encodeURIComponent(q)+"&hl=ko&gl=KR&ceid=KR:ko";
-    var apiUrl="https://api.rss2json.com/v1/api.json?rss_url="+encodeURIComponent(rssUrl);
-    var r=await fetch(apiUrl);var d=await r.json();
-    if(d.status==="ok"&&d.items){d.items.forEach(function(item){
-      var pd=item.pubDate?new Date(item.pubDate):null;
-      var src="";var tp=item.title.split(" - ");
-      if(tp.length>1)src=tp.pop().trim();
-      allItems.push({type:"news",title:tp.join(" - ").trim(),source:src,date:pd,url:item.link});
-    })}
-  }catch(e){console.log("News fetch error:",e)}
-
-  try{
-    var ytRss='https://www.youtube.com/feeds/videos.xml?channel_id=UCTpMpdiRC1cphj3a3N4M38Q';
-    var ytApi='https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(ytRss);
-    var r2=await fetch(ytApi);var d2=await r2.json();
-    if(d2.status==='ok'&&d2.items){d2.items.slice(0,5).forEach(function(item){
-      var pd=item.pubDate?new Date(item.pubDate):null;
-      allItems.push({type:'video',title:item.title,source:'YouTube',date:pd,url:item.link});
-    })}
-  }catch(e){console.log('YT fetch error:',e)}
-
-  allItems.sort(function(a,b){return (b.date||0)-(a.date||0)});
-  var html="";
-  if(allItems.length===0){
-    html='<div class="media-error">⚠️ 검색 결과를 가져오지 못했습니다. 아래 직접 검색 링크를 이용해주세요.</div>';
-  }else{
-    html+='<div class="media-count">📋 '+allItems.length+'건의 보도자료를 찾았습니다</div>';
-    allItems.forEach(function(item){
-      var ds=item.date?item.date.toLocaleDateString("ko-KR",{year:"numeric",month:"2-digit",day:"2-digit"}):"";
-      var bc=item.type==="video"?"mr-b-video":"mr-b-news";
-      var bt=item.type==="video"?"영상":"보도";
-      html+='<a class="media-result" href="'+escHtml(item.url)+'" target="_blank" rel="noopener">';
-      html+='<div class="mr-meta"><span class="mr-badge '+bc+'">'+bt+'</span>';
-      if(item.source)html+='<span style="font-size:11px;color:var(--gr)">'+escHtml(item.source)+'</span>';
-      html+='<span class="mr-date">'+ds+'</span></div>';
-      html+='<div class="mr-title">'+escHtml(item.title)+'</div></a>';
-    });
+  if(opened>0){
+    container.innerHTML='<div style="padding:12px;background:var(--card);border:1px solid var(--border);border-radius:8px;margin-top:8px">✅ 뉴스 검색 탭 '+opened+'개를 열었습니다. 팝업 차단 시 브라우저 설정에서 허용해주세요.</div>';
+  } else {
+    container.innerHTML='<div style="padding:12px;background:var(--card);border:1px solid var(--border);border-radius:8px;margin-top:8px">⚠️ 아래 검색 링크를 직접 클릭해주세요.</div>';
   }
-  container.innerHTML=html;
   btn.disabled=false;btn.textContent="🔍 오늘의 보도현황 조회하기";
 }
 
