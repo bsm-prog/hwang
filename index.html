@@ -94,31 +94,19 @@ body.edit-mode .tbl .del-cell{display:table-cell}
 body.edit-mode .tbl .grip-cell{display:table-cell}
 
 /* Calendar */
-.cal-wrap{margin-bottom:24px}
-.cal-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:12px}
+
 .cal-nav button{background:var(--wh);border:1px solid var(--bd);border-radius:6px;width:32px;height:32px;cursor:pointer;font-size:16px;color:var(--pri);display:flex;align-items:center;justify-content:center}
 .cal-nav button:hover{background:var(--lbg)}
 .cal-nav .cal-month{font-size:16px;font-weight:600;color:var(--pri);min-width:120px;text-align:center}
-.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);border:1px solid var(--bd);border-radius:10px;overflow:hidden;background:var(--wh)}
-.cal-hdr{background:var(--pri);color:var(--wh);text-align:center;font-size:12px;font-weight:500;padding:8px 4px}
+
 .cal-hdr.sun{color:#FFA8A8}.cal-hdr.sat{color:#A8D1FF}
-.cal-cell{min-height:80px;border:1px solid #EEE;padding:4px;vertical-align:top;position:relative;font-size:12px}
-.cal-cell.other{background:#FAFAFA;color:#CCC}
-.cal-cell.today{background:#FFFDE7}
-.cal-day{font-weight:600;margin-bottom:2px;font-size:12px;color:var(--dk)}
-.cal-cell.other .cal-day{color:#CCC}
-.cal-cell.sun .cal-day{color:#E53935}
-.cal-cell.sat .cal-day{color:var(--sec)}
-.cal-evt{display:block;background:var(--sec);color:var(--wh);font-size:10px;padding:1px 4px;border-radius:3px;margin-bottom:2px;overflow:hidden;cursor:default;line-height:1.4;word-break:break-all}
-.cal-evt.st0{background:var(--acc)}
+
 .cal-evt.st1{background:#D4A017}
 .cal-evt.st2{background:var(--green)}
 .cal-evt:hover{opacity:.85}
-.cal-more{font-size:10px;color:var(--sec);cursor:pointer;font-weight:500}
-.cal-legend{display:flex;gap:16px;justify-content:center;margin-top:8px;font-size:11px;color:var(--gr)}
+
 .cal-legend span{display:flex;align-items:center;gap:4px}
-.cal-legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
-.cal-cell.in-session{background:#EBF3FB!important}
+
 .cal-evt.ple{background:#1B3A5C}.cal-evt.com{background:#2E75B6}.cal-evt.aud{background:#D35400}.cal-evt.bud{background:#8E44AD}
 .cal-evt.prS{background:#009688;opacity:.8}.cal-evt.prB{background:#E67E22;opacity:.8}.cal-evt.prQ{background:#3F51B5;opacity:.8}.cal-evt.prA{background:#C0392B;opacity:.8}.cal-evt.prU{background:#9B59B6;opacity:.8}
 .cal-evt.hol{background:#E53935;opacity:.7}
@@ -126,8 +114,6 @@ body.edit-mode .tbl .grip-cell{display:table-cell}
 .cal-evt.cat-pledge{background:#F57C00}
 .cal-evt.cat-activity{background:#5C6BC0}
 
-.cal-bar{height:3px;border-radius:1px;margin:1px 0;padding:0!important}
-.cal-legend2{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:4px;font-size:11px;color:var(--gr)}
 .cal-legend2 span{display:flex;align-items:center;gap:4px}
 .cal-legend2 i{width:10px;height:10px;border-radius:2px;display:inline-block}
 
@@ -158,7 +144,7 @@ body.edit-mode .tbl .grip-cell{display:table-cell}
 .acc-item .acc-st.s1{border-color:var(--amber);background:var(--amber-bg);color:var(--amber)}
 .acc-item .acc-st.s2{border-color:var(--green);background:var(--green-bg);color:var(--green)}
 .pledge-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
-@media(max-width:768px){.metric-row{grid-template-columns:repeat(2,1fr)}.content{padding:16px}.tabs{padding:0 16px}.header{padding:16px}.cal-cell{min-height:60px}.pledge-layout{grid-template-columns:1fr}}
+@media(max-width:768px){.metric-row{grid-template-columns:repeat(2,1fr)}.content{padding:16px}.tabs{padding:0 16px}.header{padding:16px}.pledge-layout{grid-template-columns:1fr}}
 .sync-ind{display:flex;align-items:center;gap:5px;font-size:11px;color:rgba(255,255,255,.7);cursor:pointer}
 .sync-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .sync-dot.synced{background:#4CAF50}.sync-dot.syncing{background:#FFC107;animation:pulse .8s infinite}.sync-dot.error{background:#F44336}.sync-dot.offline{background:#999}
@@ -207,19 +193,19 @@ body.edit-mode .small-del{display:inline-block}
 </div>
 
 <div class="tabs">
-  <div class="tab active" onclick="showTab(0)">📰 보도자료</div>
-  <div class="tab" onclick="showTab(1)">📅 일정표</div>
-  <div class="tab" onclick="showTab(2)">📊 대시보드</div>
-  <div class="tab" onclick="showTab(3)">🏛️ 문체위</div>
-  <div class="tab" onclick="showTab(4)">✅ 핵심공약</div>
+  <div class="tab active" onclick="showTab(0)">📊 대시보드</div>
+  <div class="tab" onclick="showTab(1)">📰 보도자료</div>
+  <div class="tab" onclick="showTab(2)">🏛️ 의정활동</div>
+  <div class="tab" onclick="showTab(3)">📝 일정기록</div>
+  <div class="tab" onclick="showTab(4)">✅ 공약이행</div>
   <div class="tab" onclick="showTab(5)">👤 프로필</div>
 </div>
 
 <div class="content">
-  <div class="panel active" id="panel-5"></div>
-  <div class="panel" id="panel-3"></div>
-  <div class="panel" id="panel-0"></div>
+  <div class="panel active" id="panel-0"></div>
+  <div class="panel" id="panel-5"></div>
   <div class="panel" id="panel-1"></div>
+  <div class="panel" id="panel-journal-h"></div>
   <div class="panel" id="panel-2"></div>
   <div class="panel" id="panel-4"></div>
 </div>
@@ -227,6 +213,7 @@ body.edit-mode .small-del{display:inline-block}
 <script>
 const STORAGE='hwang_v4';
 const GIST_ID='e6235fb6dc87970ea962a36aae81e768';
+const JOURNAL_PANEL='panel-journal-h';
 const GIST_FILE='hwang_data.json';
 const TOKEN_KEY='gist_token';
 let syncTimer=null;
@@ -420,7 +407,7 @@ function makeEditable(text,onSave){const el=document.createElement('span');el.te
 function deleteItem(arr,idx){if(confirm('이 항목을 삭제하시겠습니까?')){arr.splice(idx,1);saveData();renderAll()}}
 
 /* ===== ADD ===== */
-function addActivity(year){data.activities.push({id:genId(),year,cat:'etc',title:'새 항목',date:'시기 입력',status:0,body:'내용 입력'});saveData();renderAll();showTab(3)}
+function addActivity(year){data.activities.push({id:genId(),year,cat:'etc',title:'새 항목',date:'시기 입력',status:0,body:'내용 입력'});saveData();renderAll();showTab(2)}
 function addPledge(){data.pledges.push({id:genId(),title:'새 공약',status:0,link:'연계 사업 입력',tasks:[{text:'할 일 입력',status:0}]});saveData();renderAll();showTab(4)}
 function cyclePledgeTask(pi,ti){data.pledges[pi].tasks[ti].status=(data.pledges[pi].tasks[ti].status+1)%3;saveData();renderAll()}
 function addPledgeTask(pi){data.pledges[pi].tasks.push({text:'새 할일',status:0});saveData();renderPledges()}
@@ -431,7 +418,6 @@ function deleteActTask(ai,ti){if(confirm('삭제하시겠습니까?')){data.acti
 function cycleActPrep(ai,ti){data.activities[ai].preps[ti].status=(data.activities[ai].preps[ti].status+1)%3;saveData();renderAll()}
 function addActPrep(ai){data.activities[ai].preps.push({text:'새 준비사항',status:0});saveData();renderActivities()}
 function deleteActPrep(ai,ti){if(confirm('삭제하시겠습니까?')){data.activities[ai].preps.splice(ti,1);saveData();renderActivities()}}
-function addSchedule(cat){data.schedule.push({id:genId(),date:'시기',session:'회기',cat:cat||'구분',text:'내용 입력',status:0});saveData();renderAll();showTab(1)}
 
 /* ===== RENDER HELPERS ===== */
 function bulletHTML(text){if(!text)return '';const items=text.split('|').filter(Boolean);return '<ul class="bl">'+items.map(i=>'<li>'+escHtml(i)+'</li>').join('')+'</ul>'}
@@ -625,88 +611,6 @@ function renderPledges(){
   p.innerHTML=html;
 }
 
-/* ===== CALENDAR ===== */
-let _now=new Date(),calYear=_now.getFullYear(),calMonth=_now.getMonth()+1;if(calYear<2026||(calYear===2026&&calMonth<7)){calYear=2026;calMonth=7}if(calYear>2028||(calYear===2028&&calMonth>6)){calYear=2028;calMonth=6}
-function parseSchedDate(d){if(!d)return null;const pp=d.replace(/[년월일]/g,'.').replace(/\s/g,'').split('.').filter(Boolean).map(Number);if(pp.length>=2&&pp[0]>2000)return{y:pp[0],m:pp[1],d:pp[2]||null};return null}
-function calPrev(){calMonth--;if(calMonth<1){calMonth=12;calYear--}if(calYear<2026||(calYear===2026&&calMonth<7)){calYear=2026;calMonth=7}renderSchedule()}
-function calNext(){calMonth++;if(calMonth>12){calMonth=1;calYear++}if(calYear>2028||(calYear===2028&&calMonth>6)){calYear=2028;calMonth=6}renderSchedule()}
-function ymd(y,m,d){return y*10000+m*100+d}
-
-const SESS=[[20260707,20260723],[20260901,20260918],[20261103,20261217]];
-const OVERLAY=[
-  [20260707,20260707,'본회의(개원·의장선거)','ple',1],[20260714,20260714,'본회의(업무보고)','ple',1],[20260716,20260716,'본회의(상임위선임)','ple',1],[20260720,20260722,'상임위 활동','com',1],[20260723,20260723,'본회의(안건심의)','ple',1],
-  [20260901,20260901,'본회의(개회)','ple',1],[20260902,20260903,'대집행부질문','ple',1],[20260904,20260910,'상임위 활동','com',1],[20260911,20260917,'예결위 활동','bud',1],[20260918,20260918,'본회의(안건심의)','ple',1],
-  [20261103,20261103,'본회의(개회)','ple',1],[20261104,20261105,'대집행부질문','ple',1],[20261106,20261119,'행정사무감사','aud',1],[20261120,20261125,'상임위(예산·조례)','com',1],[20261126,20261126,'본회의(조례심의)','ple',1],[20261127,20261210,'예결위(예산심사)','bud',1],[20261211,20261211,'본회의(예산심의)','ple',1],[20261214,20261216,'상임위(조례)','com',1],[20261217,20261217,'본회의(감사보고)','ple',1],
-  [20260717,20260717,'제헌절','hol',0],[20260924,20260926,'추석 연휴','hol',0],[20261119,20261119,'대학수능','hol',0],
-  [20260812,20260831,'발언준비','prS',2],[20261009,20261102,'조례준비','prB',2],[20261014,20261102,'질의준비','prQ',2],
-  [20261017,20261105,'감사준비','prA',2],[20261113,20261119,'예산준비','prU',2],
-];
-
-function renderCalendar(){
-  const first=new Date(calYear,calMonth-1,1);const startDow=first.getDay();const dim=new Date(calYear,calMonth,0).getDate();const prevDays=new Date(calYear,calMonth-1,0).getDate();
-  const today=new Date();const tY=today.getFullYear(),tM=today.getMonth()+1,tD=today.getDate();
-  const mStart=ymd(calYear,calMonth,1),mEnd=ymd(calYear,calMonth,dim);
-  const evts={};const add=(d,text,cls,pri)=>{if(!evts[d])evts[d]=[];evts[d].push({text,cls,pri:pri||5})};
-  OVERLAY.forEach(([s,e,label,cls,pri])=>{if(e<mStart||s>mEnd)return;const ds=s<mStart?1:(s%100),de=e>mEnd?dim:((Math.floor(e/100)%100===calMonth)?e%100:dim);for(let d=ds;d<=de;d++) add(d,d===ds?label:'',cls,pri)});
-  sortByDate(data.schedule.filter(s=>s.cat!=='__divider__')).forEach(s=>{const pd=parseSchedDate(s.date);if(!pd||pd.y!==calYear||pd.m!==calMonth)return;
-    var evCls='st'+s.status;
-    if(s.cat&&s.cat.indexOf('조사')>=0||s.cat&&s.cat.indexOf('분석')>=0)evCls='cat-research';
-    else if(s.cat&&s.cat.indexOf('공약')>=0)evCls='cat-pledge';
-    else if(s.cat&&s.cat.indexOf('의정')>=0||s.cat&&s.cat.indexOf('활동')>=0)evCls='cat-activity';
-    add(pd.d||1,s.text||s.cat,evCls,5)});
-  function inSess(d){const dn=ymd(calYear,calMonth,d);return SESS.some(([s,e])=>dn>=s&&dn<=e)}
-  let html='<div class="cal-wrap"><div class="cal-nav"><button onclick="calPrev()">◀</button><span class="cal-month">'+calYear+'년 '+calMonth+'월</span><button onclick="calNext()">▶</button></div><div class="cal-grid">';
-  ['일','월','화','수','목','금','토'].forEach((dn,di)=>html+=`<div class="cal-hdr${di===0?' sun':''}${di===6?' sat':''}">${dn}</div>`);
-  for(let i=startDow-1;i>=0;i--) html+=`<div class="cal-cell other"><div class="cal-day">${prevDays-i}</div></div>`;
-  for(let d=1;d<=dim;d++){const dow=(startDow+d-1)%7;let cls='cal-cell';if(calYear===tY&&calMonth===tM&&d===tD)cls+=' today';if(dow===0)cls+=' sun';if(dow===6)cls+=' sat';if(inSess(d))cls+=' in-session';html+=`<div class="${cls}"><div class="cal-day">${d}</div>`;if(evts[d]){const sorted=evts[d].sort((a,b)=>a.pri-b.pri);sorted.slice(0,4).forEach(ev=>{if(ev.text)html+=`<div class="cal-evt ${ev.cls}" title="${escHtml(ev.text)}">${escHtml(ev.text)}</div>`;else html+=`<div class="cal-evt ${ev.cls} cal-bar"></div>`});if(sorted.length>4)html+=`<div class="cal-more">+${sorted.length-4}</div>`}html+='</div>'}
-  const total=startDow+dim,remain=total%7===0?0:7-total%7;for(let i=1;i<=remain;i++)html+=`<div class="cal-cell other"><div class="cal-day">${i}</div></div>`;
-  html+='</div>';
-  html+=`<div class="cal-legend"><span><i style="background:#1B3A5C"></i>본회의</span><span><i style="background:#2E75B6"></i>상임위</span><span><i style="background:#D35400"></i>감사</span><span><i style="background:#8E44AD"></i>예결위</span><span><i style="background:#E53935"></i>공휴일</span></div>`;
-  html+=`<div class="cal-legend2"><span><i style="background:#009688"></i>발언준비</span><span><i style="background:#E67E22"></i>조례준비</span><span><i style="background:#3F51B5"></i>질의준비</span><span><i style="background:#C0392B"></i>감사준비</span><span><i style="background:#9B59B6"></i>예산준비</span></div>`;
-  html+=`<div class="cal-legend2" style="margin-top:4px"><span><i style="background:#00897B"></i>조사·분석</span><span><i style="background:#F57C00"></i>공약</span><span><i style="background:#5C6BC0"></i>의정활동</span><span><i style="background:var(--acc)"></i>기타일정</span></div>`;
-  html+='</div>';return html;
-}
-
-/* ===== RENDER: SCHEDULE ===== */
-function renderSchedule(){
-  const p=document.getElementById('panel-3');let rows='';
-  const dividerIdx=data.schedule.findIndex(s=>s.cat==='__divider__');
-  const divider=dividerIdx>=0?data.schedule[dividerIdx]:null;
-  const nonDiv=data.schedule.filter(s=>s.cat!=='__divider__');
-  const sortedSched=sortByDate(nonDiv);
-  const displaySched=[];
-  let dividerInserted=false;
-  sortedSched.forEach(s=>{
-    if(!dividerInserted && divider && parseDateOrder(s.date)>=20270700){
-      displaySched.push(divider);dividerInserted=true;
-    }
-    displaySched.push(s);
-  });
-  if(!dividerInserted && divider) displaySched.push(divider);
-
-  displaySched.forEach(s=>{
-    const origIdx=data.schedule.indexOf(s);
-    if(s.cat==='__divider__'){rows+=`<tr class="divider-row"><td colspan="${editMode?'7':'5'}">${escHtml(s.text)}</td></tr>`;return}
-    rows+=`<tr draggable="${editMode}" ondragstart="rowDragStart(event,${origIdx})" ondragend="rowDragEnd(event)" ondragover="rowDragOver(event)" ondrop="rowDrop(event,${origIdx})">
-      ${editMode?'<td class="grip-cell" style="display:table-cell">⠿</td>':''}
-      <td ${editMode?'contenteditable="true" onblur="data.schedule['+origIdx+'].date=this.textContent.trim();saveData();renderSchedule()"':''}>${escHtml(s.date)}</td>
-      <td ${editMode?'contenteditable="true" onblur="data.schedule['+origIdx+'].session=this.textContent.trim();saveData()"':''}>${escHtml(s.session)}</td>
-      <td ${editMode?'contenteditable="true" onblur="data.schedule['+origIdx+'].cat=this.textContent.trim();saveData()"':''}>${escHtml(s.cat)}</td>
-      <td ${editMode?'contenteditable="true" onblur="data.schedule['+origIdx+'].text=this.textContent.trim();saveData()"':''}>${escHtml(s.text)}</td>
-      <td><span class="badge ${statusClass[s.status]}" onclick="cycleStatus(data.schedule,${origIdx})">${statusCycle[s.status]}</span></td>
-      ${editMode?'<td class="del-cell" style="display:table-cell" onclick="deleteItem(data.schedule,'+origIdx+')">🗑</td>':''}
-    </tr>`});
-  p.innerHTML=`<div class="section-title">📅 전반기 의정활동 일정표</div>${renderCalendar()}<div class="section-title" style="margin-top:32px">📋 일정 상세 목록</div>
-    <table class="tbl"><thead><tr>${editMode?'<th style="width:40px"></th>':''}<th style="width:80px">시기</th><th style="width:80px">회기</th><th style="width:110px">구분</th><th>주요 내용</th><th style="width:60px">상태</th>${editMode?'<th style="width:40px"></th>':''}</tr></thead><tbody>${rows}</tbody></table>
-    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
-      <button class="add-btn" style="flex:1;min-width:120px" onclick="addSchedule('조사·분석')">+ 조사·분석</button>
-      <button class="add-btn" style="flex:1;min-width:120px" onclick="addSchedule('공약 관련')">+ 공약 관련</button>
-      <button class="add-btn" style="flex:1;min-width:120px" onclick="addSchedule('의정활동')">+ 의정활동</button>
-      <button class="add-btn" style="flex:1;min-width:120px" onclick="addSchedule()">+ 기타 일정</button>
-    </div>`;
-}
-
-/* ===== RENDER: PROFILE ===== */
 function renderProfile(){
   document.getElementById('panel-4').innerHTML=`
     <div class="section-title">👤 의원 프로필</div>
@@ -801,7 +705,52 @@ async function searchMedia(){
   btn.disabled=false;btn.textContent="🔍 오늘의 보도현황 조회하기";
 }
 
-function renderAll(){renderDashboard();renderActivities();renderPledges();renderSchedule();renderProfile();renderMedia()}
+function renderJournal(){
+  data.journal=data.journal||[];
+  var pId=document.querySelector('[id^="panel-journal"]')||document.getElementById(JOURNAL_PANEL);
+  if(!pId)return;
+  var sorted=data.journal.slice().sort(function(a,b){return b.date.localeCompare(a.date)});
+  var rows='';
+  sorted.forEach(function(j,i){
+    var origIdx=data.journal.indexOf(j);
+    if(editMode){
+      rows+='<div class="journal-entry" style="border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:8px;background:var(--card)">';
+      rows+='<div style="display:flex;gap:8px;align-items:center;margin-bottom:6px">';
+      rows+='<input type="date" value="'+escHtml(j.date)+'" onchange="data.journal['+origIdx+'].date=this.value;saveData();renderJournal()" style="padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--card);color:var(--text)">';
+      rows+='<button onclick="deleteJournal('+origIdx+')" style="background:#e74c3c;color:#fff;border:none;border-radius:4px;padding:4px 10px;cursor:pointer;font-size:12px">삭제</button>';
+      rows+='</div>';
+      rows+='<textarea onblur="data.journal['+origIdx+'].text=this.value;saveData()" style="width:100%;min-height:60px;padding:8px;border:1px solid var(--border);border-radius:4px;background:var(--bg);color:var(--text);resize:vertical;box-sizing:border-box">'+escHtml(j.text)+'</textarea>';
+      rows+='</div>';
+    } else {
+      rows+='<div style="border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:8px;background:var(--card)">';
+      rows+='<div style="font-size:13px;color:var(--sub);margin-bottom:4px;font-weight:600">'+escHtml(j.date)+'</div>';
+      rows+='<div style="white-space:pre-wrap;line-height:1.6">'+escHtml(j.text)+'</div>';
+      rows+='</div>';
+    }
+  });
+  pId.innerHTML='<div style="padding:16px"><h2 style="margin-bottom:12px">📝 일정기록</h2>'+
+    '<div style="border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:16px;background:var(--card)">'+
+    '<div style="display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap">'+
+    '<input type="date" id="journalDate" style="padding:6px 10px;border:1px solid var(--border);border-radius:4px;background:var(--card);color:var(--text)">'+
+    '<textarea id="journalText" placeholder="오늘의 기록을 입력하세요..." style="flex:1;min-width:200px;min-height:60px;padding:8px;border:1px solid var(--border);border-radius:4px;background:var(--bg);color:var(--text);resize:vertical"></textarea>'+
+    '<button onclick="addJournal()" style="background:var(--accent,#3498db);color:#fff;border:none;border-radius:4px;padding:8px 16px;cursor:pointer;white-space:nowrap">저장</button>'+
+    '</div></div>'+
+    '<div>'+rows+'</div></div>';
+  var dateInput=document.getElementById('journalDate');
+  if(dateInput&&!dateInput.value){var t=new Date();dateInput.value=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0')}
+}
+function addJournal(){
+  var d=document.getElementById('journalDate');
+  var t=document.getElementById('journalText');
+  if(!t||!t.value.trim())return;
+  data.journal=data.journal||[];
+  data.journal.push({id:genId(),date:d?d.value:'',text:t.value.trim()});
+  saveData();renderJournal();
+  if(t)t.value='';
+}
+function deleteJournal(idx){if(confirm('이 기록을 삭제하시겠습니까?')){data.journal.splice(idx,1);saveData();renderJournal()}}
+
+function renderAll(){renderDashboard();renderActivities();renderPledges();renderJournal();renderProfile();renderMedia()}
 loadData();renderAll();pullFromGist();
 </script>
 </body>
